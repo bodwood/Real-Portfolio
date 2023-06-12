@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
-import {aboutMeData} from './data/data'
+import {aboutMeData, pages} from './data/data'
 
 export const metadata = {
   title: 'Next.js',
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <Header data={aboutMeData}/>
+        <Header name={aboutMeData.name} pages={pages}/>
          {children}
         <Footer />
         </body>
