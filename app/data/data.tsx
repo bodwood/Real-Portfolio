@@ -19,8 +19,9 @@ export const pages = [
 
 // About me page data
 export const aboutMeData = {
+ name: "Bodie Wood",
  title: "Hey! I'm Bodie Wood",
- body: "A full stack engineer with a passion for building things",
+ body: "I'm full stack engineer with a passion for building things",
  highlightedBody: "I'm constantly seeking new challenges, and solving problems.",
  body2: "When I'm not coding, I enjoy Onewheeling, playing Pickleball, and spending time with my family.",
 }
