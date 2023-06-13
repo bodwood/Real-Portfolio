@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ h1, h2, h3, h4 {
+  font-family: Oswald, Proxima Nova, system-ui, sans-serif;
+ }
+ html {
+  font-family: Merriweather, Proxima Nova, sans-serif;
+ }
+ h1 {
+  @apply text-4xl sm:text-6xl;
+ }
+}

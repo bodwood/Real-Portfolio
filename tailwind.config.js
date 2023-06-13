@@ -46,7 +46,8 @@ module.exports = {
         footer: '0px -7px 41px 3px rgba(175, 175, 0.25)',
       },
       backgroundImage: {
-        'linear-gradient(98.85deg, #557AFF 7.8%, #68F590)': 'linear-gradient(98.85deg, #557AFF 7.8%, #68F590)',
+        header: 
+        'linear-gradient(98.85deg, #557AFF 7.8%, #68F590)',
       },
       spacing: {
         '8xl': '96rem',
@@ -64,7 +65,7 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      "2xl": "1536px",
+      '2xl': '1536px',
     },
   },
   plugins: [],
