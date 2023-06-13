@@ -1,19 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
       black: '#191A19',
       blue: '#557AFF',
       'blue-light': '#EFF3FF',
-      grey: 'D9D9D9',
+      grey: '#D9D9D9',
       'grey-light': '#fafafa',
       green: '#68F590',
-      white: '#FFFFFF',
+      white: '#fff',
     },
     fontFamily: {
       sans: ['Georgia', 'sans-serif'],
@@ -43,11 +39,10 @@ module.exports = {
         50: '55px',
       },
       boxShadow: {
-        footer: '0px -7px 41px 3px rgba(175, 175, 0.25)',
+        footer: '0px -7px 41px 3px rgba(175, 175, 175, 0.25)',
       },
       backgroundImage: {
-        header: 
-        'linear-gradient(98.85deg, #557AFF 7.8%, #68F590)',
+        header: 'linear-gradient(98.85deg, #557AFF 7.8%, rgba(239, 252, 255, 0) 139.35%);',
       },
       spacing: {
         '8xl': '96rem',
@@ -62,10 +57,19 @@ module.exports = {
     },
     screens: {
       sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
       md: '768px',
+      // => @media (min-width: 768px) { ... }
+
       lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
       xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
       '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
     },
   },
   plugins: [],

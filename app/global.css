@@ -10,6 +10,6 @@
   font-family: Merriweather, Proxima Nova, sans-serif;
  }
  h1 {
-  @apply text-4xl sm:text-6xl;
+  @apply text-3xl;
  }
 }
