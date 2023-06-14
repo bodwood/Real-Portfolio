@@ -13,3 +13,6 @@
   @apply text-3xl;
  }
 }
+.icons_contactme {
+ @apply text-2xl sm:text-3xl text-black m-2;
+}

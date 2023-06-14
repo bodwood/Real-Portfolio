@@ -2,7 +2,7 @@ import "./global.css"
 import React from 'react'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
-import {aboutMeData, pages} from './data/data'
+import {aboutMeData, pages, contactMeLinks} from './data/data'
 
 export const metadata = {
   title: 'Next.js',
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <Header name={aboutMeData.name} pages={pages}/>
          {children}
-        <Footer />
+        <Footer contactMeLinks={contactMeLinks}/>
         </body>
     </html>
   )

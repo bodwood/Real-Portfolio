@@ -81,3 +81,9 @@ export const projectData = [
    ]
  },
 ]
+
+export const contactMeLinks = [
+  'bodiewould@gmail.com',
+  'https://www.linkedin.com/in/bodie-wood/',
+  'https://github.com/bodwood',
+]
