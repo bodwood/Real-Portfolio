@@ -13,21 +13,20 @@ type HeaderProps = {
 
 export const Header = ({name, pages}: HeaderProps ) => {
   return (
-    <header className='flex flex-col relative bg-linear-557AFF w-full h-48'> 
+    <header className='flex flex-col relative bg-linear-557AFF w-full h-28'> 
      <div className='flex flex-col justify-around h-full sm:px-6 px-1 bg-header z-10'> 
-      <nav className='text-left flex flex-row sm:gap-6 gap-0'>
+      <nav className='flex flex-row items-center sm:gap-6 self-start gap-0'>
         {pages.map((page) => {
           return(
-            <Link aria-label={page.label} key={page.id} href={page.link} className='px-6 py-2 min-w-100 hover:bg-blue-light hover:text-blue font-display uppercase tracking-wide sm:bg-transparent bg-white'>
+            <Link aria-label={page.label} key={page.id} href={page.link} className='py-2 px-6 min-w-100 hover:bg-blue-light hover:text-blue font-display uppercase tracking-wide sm:bg-transparent bg-white'>
             {page.label}
             </Link>
           )
         })
         }
+        <div className='relative w-24 h-24 bg-black rounded-full flex justify-center items-center text-center p-5 shadow-xl text-white text-4xl'>BW</div>
       </nav>
-      <h1 className='text-white uppercase pl-2 sm:pl-0'>{name}</h1>
      </div>
-      <Image priority height={400} width={2000} className='w-full h-48 object-cover object-top absolute mb-6' src='/images/header-image.jpeg' alt={`Image of ${name}`} aria-label={`Image of ${name}`} />
     </header>
   )
 }
