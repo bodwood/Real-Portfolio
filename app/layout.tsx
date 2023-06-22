@@ -18,9 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <Header name={aboutMeData.name} pages={pages}/>
+        <Header name={aboutMeData.name} pages={pages} contactMeLinks={contactMeLinks}/>
          {children}
-        <Footer contactMeLinks={contactMeLinks}/>
         </body>
     </html>
   )

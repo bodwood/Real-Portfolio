@@ -2,18 +2,18 @@
 export const pages = [
  {
   id: 1,
-  label: "About Me",
+  label: "Home",
   link: "/",
  },
  {
   id: 2,
-  label: "My Projects",
-  link: "/my-projects",
+  label: "About",
+  link: "/about",
  },
  {
   id: 3,
-  label: "Contact Me",
-  link: "/contact-me",
+  label: "Projects",
+  link: "/projects",
  },
 ];
 
