@@ -19,19 +19,24 @@ type HeaderProps = {
 
 export const Header = ({name, pages, contactMeLinks}: HeaderProps ) => {
   return (
-    <header className='flex flex-col relative bg-linear-557AFF w-full h-28'> 
-     <div className='flex flex-col justify-around h-full sm:px-6 px-1 bg-header z-10'> 
-      <nav className='flex flex-row items-center sm:gap-6 gap-0'>
+
+      <nav className='flex items-center justify-between flex-wrap bg-teal-500 p-6'>
+          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div className="text-sm lg:flex-grow">
         {pages.map((page) => {
           return(
-            <Link aria-label={page.label} key={page.id} href={page.link} className='py-2 px-6 min-w-100 hover:bg-blue-light hover:text-blue font-display uppercase tracking-wide sm:bg-transparent bg-white'>
+            <Link aria-label={page.label} key={page.id} href={page.link} className='py-2 px-6 min-w-100 hover:bg-blue-light hover:text-grey-500 font-display uppercase tracking-wide sm:bg-transparent bg-white'>
             {page.label}
             </Link>
           )
         })
         }
-        <div className=' w-24 h-24 bg-black rounded-full flex justify-center items-center text-center p-5 shadow-xl text-white text-4xl'>BW</div>
-         <div className='flex justify-end gap-1'>
+        </div>
+        </div>
+        <div className='flex justify-center items-center'>
+        <div className='w-24 h-24 bg-black rounded-full flex justify-center items-center text-center p-5 shadow-xl text-white text-4xl'>BW</div>
+        </div>
+         <div className='inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0'>
         <Link href={contactMeLinks[2]}>
       <Icon icon={github} size={32} aria-label='GitHub' className='icons_contactme'/>
         </Link>
@@ -43,7 +48,6 @@ export const Header = ({name, pages, contactMeLinks}: HeaderProps ) => {
       </Link>
       </div>
       </nav>
-     </div>
-    </header>
+
   )
 }
