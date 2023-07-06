@@ -1,6 +1,6 @@
 import "./global.css"
 import React from 'react'
-import { Header } from './components/header'
+import Navbar from './components/navbar'
 import { Footer } from './components/footer'
 import {aboutMeData, pages, contactMeLinks} from './data/data'
 
@@ -15,12 +15,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head />
       <body>
-        <Header name={aboutMeData.name} pages={pages} contactMeLinks={contactMeLinks}/>
-         {children}
-        </body>
+        {/* <Navbar name={aboutMeData.name} pages={pages} contactMeLinks={contactMeLinks} /> */}
+        <Navbar />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
