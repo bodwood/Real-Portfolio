@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@types/google-fonts": "^1.0.0",
+    "eslint": "^8.44.0",
     "tailwindcss-dark-mode": "^1.1.7"
   }
 }
