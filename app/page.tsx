@@ -1,30 +1,98 @@
-import {aboutMeData} from './data/data'
-import Image from 'next/image'
+'use client';
+import Navbar from './components/navbar';
+import { useState, useEffect } from 'react';
+import { ReactNode } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { useMediaQuery } from 'react-responsive';
+import Image from 'next/image';
+import './global.css';
 
-const AboutMePage = () => {
+const Home = () => {
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
+
+  useEffect(() => {
+    const calculateContainerHeight = () => {
+      const screenHeight = window.innerHeight;
+      const newContainerHeight = isScreenHeightSmall ? screenHeight : (7 / 8) * screenHeight;
+      setContainerHeight(newContainerHeight);
+    };
+
+    calculateContainerHeight();
+
+    const handleResize = () => {
+      calculateContainerHeight();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isScreenHeightSmall]);
+
   return (
-    <main className='flex flex-col items-center sm:mb-32 mb-16'>
-      <section className='flex sm:flex-row sm:w-10/12 items-center flex-col w-full'>
-        <div className='sm:w-1/3 w-full flex justify-center mt-10'>
-          <Image width={640} height={960} aria-label={'Image of Bodie Wood'} src={'/images/animegan_toon_portfolio-pic.jpeg'} alt='Pic of Bodie' priority={false} className='profileImage'/>
+    <div className='flex items-center justify-center h-screen pt-0.5'>
+      <div
+        className='container mx-auto px-10 rounded-3xl overflow-hidden shadow shadow-white h-full bg-white'
+        style={{ height: `${containerHeight}px` }}
+      >
+        <>
+          <Navbar />
+        </>
+        <div className='flex justify-center h-full'>
+          <div className='w-1/6 flex flex-col'>
+            <div className='columns-1 justify-center pt-48'>
+              <div className='grid-rows-5 pb-20 pl-12'>
+                <div>
+                  <FontAwesomeIcon icon={faInstagram} className='h-10 w-10' />
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faYoutube} className='h-10 w-10' />
+                </div>
+                <div className='pb-10 content-center'>
+                  <FontAwesomeIcon icon={faTwitter} className='h-10 w-10' />
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faLinkedin} className='h-10 w-10' />
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faGithub} className='h-10 w-10' />
+                </div>
+              </div>
+            </div>
           </div>
-        <div className='sm:ml-20 sm:mt-0 sm:w-2/3 w-full mt-6 ml-0 p-10'>
-          <h2>{aboutMeData.title}</h2>
-          <p className='text-base'>{aboutMeData.body}</p>
+          <div className='w-5/6 h-3/4 pt-16 pr-24'>
+            <div className='flex'>
+              <div className='w-1/2 pt-20'>
+                <p className='text-3xl'>Hello, I'm Bodie</p>
+                <p className='text-lg pt-4'>Full-Stack Engineer</p>
+                <p className='text-lg pt-2 pb-10'>High level web development experience, producing quality work.</p>
+                <button
+                  type='button'
+                  className='text-white bg-gradient-to-r from-blue to-grey-300 hover:from-grey-600 hover:to-grey-400 rounded-full px-6 py-3 mt-4 text-lg font-bold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105'
+                  style={{ fontSize: '1.5rem' }}
+                >
+                  Contact Me
+                </button>
+              </div>
+              <div className='w-1/2'>
+                <Image
+                  src={'/images/bwood_portfolio_home.png'}
+                  alt='Bodie Wood'
+                  className='rounded-3xl'
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </div>
           </div>
-      </section>
-      <section className='w-full bg-blue-light p-10 h-full'>
-        <p>{aboutMeData.highlightedBody}</p>
-      </section>
-      <section className='flex sm:flex-row sm:w-10/12 p-10 items-center w-full flex-col'>
-        <div className='flex flex-col w-full mb-10 sm:mb-0 sm:w-7/12'>
-          <p>{aboutMeData.body2}</p>
-          </div>
-        <div className='sm:w-5/12 sm:ml-10 w-full ml-0'>
-             <Image  width={500} height={250} aria-label={'Image of Bodie Wood'} src={'/images/animegan_toon_portfolio-pic.jpeg'} alt='Pic of Bodie' priority={false} className='h-250 object-cover w-500'/>
         </div>
-      </section>
-    </main>
-  )
-}
-export default AboutMePage
+      </div>
+    </div>
+  );
+};
+
+export default Home;

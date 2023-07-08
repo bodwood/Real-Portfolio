@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     colors: {
       black: '#191A19',
-      blue: '#557AFF',
+      blue: '#4186C8',
       'blue-light': '#EFF3FF',
       grey: '#D9D9D9',
       'grey-light': '#fafafa',
@@ -71,6 +71,9 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+    },
+    backgroundImage: {
+      'hero-background': "url('/images/background-image.jpeg')",
     },
   },
   plugins: [],
