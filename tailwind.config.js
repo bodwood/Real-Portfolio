@@ -8,17 +8,6 @@ module.exports = {
       serif: ['Merriweather', 'serif'],
       display: ['Oswald'],
     },
-    fontSize: {
-      sm: '0.8rem',
-      base: '1rem',
-      lg: '1.15rem',
-      xl: '1.25rem',
-      '2xl': '1.563rem',
-      '3xl': '1.953rem',
-      '4xl': '2.441rem',
-      '5xl': '3.052rem',
-      '6xl': '3.5rem',
-    },
     minWidth: {
       0: '0',
       100: '100px',
@@ -47,3 +36,19 @@ module.exports = {
   },
   plugins: [],
 };
+
+/*
+sm	640px	@media (min-width: 640px) { ... }
+md	768px	@media (min-width: 768px) { ... }
+lg	1024px	@media (min-width: 1024px) { ... }
+xl	1280px	@media (min-width: 1280px) { ... }
+2xl	1536px	@media (min-width: 1536px) { ... }
+
+Desktop = 1920
+Macbook Air = 1440
+iPad 10.9 in = 810
+iPad Pro = 1024
+Google Pixel = 393
+iPhone Mini = 375
+iPhone Pro Max = 390
+*/

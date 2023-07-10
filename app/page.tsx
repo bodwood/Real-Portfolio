@@ -44,7 +44,7 @@ const Home = () => {
         <>
           <Navbar />
         </>
-        <div className='flex flex-col md:flex-row justify-center md:h-full'>
+        <div className='flex flex-col md:flex-row justify-center'>
           <div className='w-full md:w-1/6 flex flex-col md:items-center'>
             <div className='flex justify-center hidden md:block'>
               <div
@@ -72,7 +72,7 @@ const Home = () => {
           <div className='w-full sm:pt-0 sm:h-1/2 md:w-5/6 md:h-3/4 md:pt-8 md:pt-16 pr-0 md:pr-24'>
             <div className='flex flex-col md:flex-row'>
               <div className='w-full md:w-1/2 md:pt-20'>
-                <p className='text-3xl text-center md:text-left'>Hello, I'm Bodie</p>
+                <p className='text-3xl text-center md:text-left xl:pt-10'>Hello, I'm Bodie</p>
                 <p className='text-lg pt-4 text-center md:text-left'>Full-Stack Engineer</p>
                 <p className='text-lg pt-2 pb-10 text-center md:text-left'>
                   High level web development experience, producing quality work.
@@ -100,11 +100,16 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className='flex md:flex-col pt-10 md:pt-0 justify-center'>
-              <div className='align-center flex-row flex items-center'>
+            <div className='flex flex-row md:pt-4 lg:pt-25'>
+              <div className='w-1/2 pl-2 md:pl-10 flex-row flex items-center'>
                 <FontAwesomeIcon icon={faComputerMouse} className='pr-2 h-6 w-6 text-grey' />
                 <p className='inline'>Scroll Down</p>
                 <FontAwesomeIcon icon={faArrowDown} className='pl-2 h-4 w-4' />
+              </div>
+              <div className='w-1/2'>
+                <div>
+
+                </div>
               </div>
             </div>
           </div>
