@@ -3,15 +3,6 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
-    colors: {
-      black: '#191A19',
-      blue: '#4186C8',
-      'blue-light': '#EFF3FF',
-      grey: '#D9D9D9',
-      'grey-light': '#fafafa',
-      green: '#68F590',
-      white: '#fff',
-    },
     fontFamily: {
       sans: ['Georgia', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
@@ -42,9 +33,6 @@ module.exports = {
       boxShadow: {
         footer: '0px -7px 41px 3px rgba(175, 175, 175, 0.25)',
       },
-      backgroundImage: {
-        header: 'linear-gradient(98.85deg, #557AFF 7.8%, rgba(239, 252, 255, 0) 139.35%);',
-      },
       spacing: {
         '8xl': '96rem',
         '9xl': '128rem',
@@ -55,9 +43,6 @@ module.exports = {
       flexBasis: {
         '4/5': '66%',
       },
-    },
-    backgroundImage: {
-      'hero-background': "url('/images/background-image.jpeg')",
     },
   },
   plugins: [],

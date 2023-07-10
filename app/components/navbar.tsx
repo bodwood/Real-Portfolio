@@ -23,14 +23,14 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='bg-gray-100 dark:bg-gray-900 px-8 pt-4'>
+      <div className='bg-white dark:bg-gray-900 px-8 md:pt-4 pb-4'>
         <div className='h-16 flex items-center justify-between'>
-          <div className='pl-10 items-center text-3xl'>
+          <div className='md:pl-5 justify-center text-3xl'>
             Bo
             <p className='inline text-blue'>d</p>ie
           </div>
 
-          <div className='flex items-center text-lg pr-2 space-x-12 md:hidden'>
+          <div className='flex items-center text-lg space-x-12 md:hidden'>
             <button
               className='text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none'
               onClick={toggleMobileMenu}
@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
 
         <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-          <div className='flex flex-col items-center text-lg space-y-4 pt-4'>
+          <div className='flex flex-col items-center text-lg space-y-4 pt-4 pb-10'>
             <div className='relative'>
               <Link href='/Home'>Home</Link>
             </div>

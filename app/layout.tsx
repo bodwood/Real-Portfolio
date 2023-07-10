@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head />
-      <body className='bg-hero-background bg-cover bg-no-repeat bg-left- bg-fixed'>
+      <body className='bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600'>
         {/* <Navbar name={aboutMeData.name} pages={pages} contactMeLinks={contactMeLinks} /> */}
         {children}
       </body>

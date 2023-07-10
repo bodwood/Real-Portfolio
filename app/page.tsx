@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faHand } from '@fortawesome/free-regular-svg-icons';
+import { faComputerMouse, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import './global.css';
@@ -34,9 +36,9 @@ const Home = () => {
   }, [isScreenHeightSmall]);
 
   return (
-    <div className='flex items-center justify-center h-screen pt-0.5'>
+    <div className='flex items-center justify-center h-screen'>
       <div
-        className='container mx-auto px-10 rounded-3xl overflow-hidden shadow shadow-white h-full bg-white'
+        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full bg-white overflow-auto md:overflow-hidden'
         style={{ height: `${containerHeight}px` }}
       >
         <>
@@ -44,18 +46,21 @@ const Home = () => {
         </>
         <div className='flex flex-col md:flex-row justify-center md:h-full'>
           <div className='w-full md:w-1/6 flex flex-col md:items-center'>
-            <div className='flex justify-center md:block'>
-              <div className='grid grid-cols-5 md:grid-cols-1 gap-4 md:gap-2 md:pt-48 sm:pt-0'>
+            <div className='flex justify-center hidden md:block'>
+              <div
+                className='grid grid-cols-5 md:grid-cols-1 gap-4 md:gap-2 md:pt-48 sm:pt-0 md:pr-16'
+                style={{ color: 'grey-500' }}
+              >
                 <div>
                   <FontAwesomeIcon icon={faInstagram} className='h-10 w-10' />
                 </div>
                 <div>
                   <FontAwesomeIcon icon={faYoutube} className='h-10 w-10' />
                 </div>
-                <div className='pb-10 md:pb-0 md:content-center'>
+                <div>
                   <FontAwesomeIcon icon={faTwitter} className='h-10 w-10' />
                 </div>
-                <div>
+                <div className='md:pt-16'>
                   <FontAwesomeIcon icon={faLinkedin} className='h-10 w-10' />
                 </div>
                 <div>
@@ -72,22 +77,34 @@ const Home = () => {
                 <p className='text-lg pt-2 pb-10 text-center md:text-left'>
                   High level web development experience, producing quality work.
                 </p>
-                <button
-                  type='button'
-                  className='text-white bg-blue hover:grey rounded-full px-6 py-3 mt-4 text-lg font-bold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hidden md:block'
-                  style={{ fontSize: '1.5rem' }}
-                >
-                  Contact Me
-                </button>
+                <div className='flex justify-center sm:justify-start pb-10'>
+                  <a
+                    href='contact'
+                    className='relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-purple-500'
+                  >
+                    <span className='absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700'></span>
+                    <span className='absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease'></span>
+                    <span className='relative text-white'>
+                      Contact Me <FontAwesomeIcon icon={faHand} className='pl-2' />
+                    </span>
+                  </a>
+                </div>
               </div>
-              <div className='w-full md:w-1/2 md:pt-8 md:pt-'>
+              <div className='w-full md:w-1/2'>
                 <Image
                   src={'/images/bwood_portfolio_home.png'}
                   alt='Bodie Wood'
                   className='rounded-3xl'
                   width={500}
-                  height={500}
+                  height={100}
                 />
+              </div>
+            </div>
+            <div className='flex md:flex-col pt-10 md:pt-0 justify-center'>
+              <div className='align-center flex-row flex items-center'>
+                <FontAwesomeIcon icon={faComputerMouse} className='pr-2 h-6 w-6 text-grey' />
+                <p className='inline'>Scroll Down</p>
+                <FontAwesomeIcon icon={faArrowDown} className='pl-2 h-4 w-4' />
               </div>
             </div>
           </div>
