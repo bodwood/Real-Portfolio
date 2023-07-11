@@ -110,7 +110,7 @@ const Home = () => {
                 <div>
 
                 </div>
-              </div>
+              </div>f
             </div>
           </div>
         </div>
@@ -120,3 +120,11 @@ const Home = () => {
 };
 
 export default Home;
+
+/*
+sm phones
+md ipads
+lg small laptops and larger tablets
+xl laptops
+2xl desktops
+*/

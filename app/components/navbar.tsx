@@ -24,7 +24,8 @@ const Navbar = () => {
   return (
     <>
       <div className='bg-white dark:bg-gray-900 px-8 md:pt-4 pb-4'>
-        <div className='h-16 flex items-center justify-between'>
+        <div className='h-16 flex justify-center items-center justify-between'>
+          
           <div className='md:pl-5 justify-center text-3xl'>
             Bo
             <p className='inline text-blue'>d</p>ie

@@ -44,6 +44,7 @@ lg	1024px	@media (min-width: 1024px) { ... }
 xl	1280px	@media (min-width: 1280px) { ... }
 2xl	1536px	@media (min-width: 1536px) { ... }
 
+
 Desktop = 1920
 Macbook Air = 1440
 iPad 10.9 in = 810
@@ -51,4 +52,10 @@ iPad Pro = 1024
 Google Pixel = 393
 iPhone Mini = 375
 iPhone Pro Max = 390
+
+sm phones
+md ipads
+lg small laptops and larger tablets
+xl laptops
+2xl desktops
 */
