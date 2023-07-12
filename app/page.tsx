@@ -5,13 +5,14 @@ import { ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faHand } from '@fortawesome/free-regular-svg-icons';
-import { faComputerMouse, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faComputerMouse, faArrowDown, faCode } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import './global.css';
 
 const Home = () => {
   const [containerHeight, setContainerHeight] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
 
@@ -34,6 +35,7 @@ const Home = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [isScreenHeightSmall]);
+
 
   return (
     <div className='flex items-center justify-center h-screen'>
@@ -94,7 +96,7 @@ const Home = () => {
                 <Image
                   src={'/images/bwood_portfolio_home.png'}
                   alt='Bodie Wood'
-                  className='rounded-3xl'
+                  className={`rounded-3xl transform scale-${scrollY > 0 ? '150' : '100'}`}
                   width={500}
                   height={100}
                 />
@@ -102,15 +104,15 @@ const Home = () => {
             </div>
             <div className='flex flex-row md:pt-4 lg:pt-25'>
               <div className='w-1/2 pl-2 md:pl-10 flex-row flex items-center'>
-                <FontAwesomeIcon icon={faComputerMouse} className='pr-2 h-6 w-6 text-grey' />
-                <p className='inline'>Scroll Down</p>
+               <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
+                <p className='inline'>About Me</p>
                 <FontAwesomeIcon icon={faArrowDown} className='pl-2 h-4 w-4' />
               </div>
               <div className='w-1/2'>
                 <div>
 
                 </div>
-              </div>f
+              </div>
             </div>
           </div>
         </div>
