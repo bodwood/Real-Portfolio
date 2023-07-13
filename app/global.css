@@ -2,4 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.profile-pic {
+  display: block;
+  margin: 0 auto;
+  transform: translateX(0);
+  transition: transform 2s ease;
+}
+
+.profile-pic.slideX {
+  animation: zoomAnimation 2s forwards;
+  transform-origin: 50% 50%;
+}
+
+@keyframes zoomAnimation {
+  0% {
+    transform: translateX(0) scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    transform: translateX(-50%);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: translateX(-50%) scale(50);
+    filter: brightness(0%);
+  }
+}
+
+
+.fade-away.slideX {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
 

@@ -9,10 +9,12 @@ import { faComputerMouse, faArrowDown, faCode } from '@fortawesome/free-solid-sv
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import './global.css';
+import { useRouter } from 'next/navigation';
 
 const Home = () => {
   const [containerHeight, setContainerHeight] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
+  const [slideX, setSlideX] = useState(0);
+  const router = useRouter();
 
   const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
 
@@ -36,6 +38,13 @@ const Home = () => {
     };
   }, [isScreenHeightSmall]);
 
+  const handleAboutMeClick = () => {
+    setSlideX(1);
+
+    setTimeout(() => {
+      return router.push('/about');
+    }, 1000);
+  };
 
   return (
     <div className='flex items-center justify-center h-screen'>
@@ -46,8 +55,8 @@ const Home = () => {
         <>
           <Navbar />
         </>
-        <div className='flex flex-col md:flex-row justify-center'>
-          <div className='w-full md:w-1/6 flex flex-col md:items-center'>
+        <div className='flex flex-col md:flex-row justify-center '>
+          <div className={`w-full md:w-1/6 flex flex-col md:items-center fade-away ${slideX === 1 ? 'slideX' : ''}`}>
             <div className='flex justify-center hidden md:block'>
               <div
                 className='grid grid-cols-5 md:grid-cols-1 gap-4 md:gap-2 md:pt-48 sm:pt-0 md:pr-16'
@@ -73,7 +82,7 @@ const Home = () => {
           </div>
           <div className='w-full sm:pt-0 sm:h-1/2 md:w-5/6 md:h-3/4 md:pt-8 md:pt-16 pr-0 md:pr-24'>
             <div className='flex flex-col md:flex-row'>
-              <div className='w-full md:w-1/2 md:pt-20'>
+              <div className={`w-full md:w-1/2 md:pt-20 fade-away ${slideX === 1 ? 'slideX' : ''}`}>
                 <p className='text-3xl text-center md:text-left xl:pt-10'>Hello, I'm Bodie</p>
                 <p className='text-lg pt-4 text-center md:text-left'>Full-Stack Engineer</p>
                 <p className='text-lg pt-2 pb-10 text-center md:text-left'>
@@ -96,23 +105,21 @@ const Home = () => {
                 <Image
                   src={'/images/bwood_portfolio_home.png'}
                   alt='Bodie Wood'
-                  className={`rounded-3xl transform scale-${scrollY > 0 ? '150' : '100'}`}
+                  className={`rounded-3xl profile-pic ${slideX === 1 ? 'slideX' : ''}`}
                   width={500}
                   height={100}
                 />
               </div>
             </div>
-            <div className='flex flex-row md:pt-4 lg:pt-25'>
-              <div className='w-1/2 pl-2 md:pl-10 flex-row flex items-center'>
-               <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
-                <p className='inline'>About Me</p>
-                <FontAwesomeIcon icon={faArrowDown} className='pl-2 h-4 w-4' />
-              </div>
-              <div className='w-1/2'>
-                <div>
-
-                </div>
-              </div>
+            <div
+              className={`w-1/2 pl-2 md:pl-10 flex-row flex items-center cursor-pointer fade-away ${
+                slideX === 1 ? 'slideX' : ''
+              }`}
+              onClick={handleAboutMeClick}
+            >
+              <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
+              <p className='inline'>About Me</p>
+              <FontAwesomeIcon icon={faArrowDown} className='pl-2 h-4 w-4' />
             </div>
           </div>
         </div>
