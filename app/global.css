@@ -10,11 +10,19 @@
 }
 
 .profile-pic.slideX {
-  animation: zoomAnimation 2s forwards;
+  animation: slideXAnimation 2s forwards;
   transform-origin: 50% 50%;
 }
 
-@keyframes zoomAnimation {
+.profile-pic.slideY {
+  animation: slideYAnimation 2s forwards;
+  transform-origin: 50% 50%;
+}
+
+/*
+* Slides the element to the left and fades it away. Currently used for the profile pic on larger screens.
+*/
+@keyframes slideXAnimation {
   0% {
     transform: translateX(0) scale(1);
     filter: brightness(100%);
@@ -29,11 +37,26 @@
   }
 }
 
+/*
+* Slides the element up and fades it away. Currently used for the profile pic on smaller screens.
+*/
+@keyframes slideYAnimation {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    transform: translateY(-50%);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: translateY(-50%) scale(50);
+    filter: brightness(0%);
+  }
+}
 
 .fade-away.slideX {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 1s, opacity 1s linear;
 }
-
-

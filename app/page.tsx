@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation';
 const Home = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [slideX, setSlideX] = useState(0);
+  const [slideY, setSlideY] = useState(0);
   const router = useRouter();
 
   const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
@@ -39,11 +40,20 @@ const Home = () => {
   }, [isScreenHeightSmall]);
 
   const handleAboutMeClick = () => {
-    setSlideX(1);
+    console.log('container height' + containerHeight);
+    if (containerHeight < 700) {
+      setSlideX(1);
 
-    setTimeout(() => {
-      return router.push('/about');
-    }, 1000);
+      setTimeout(() => {
+        return router.push('/about');
+      }, 1000);
+    } else {
+      setSlideY(1);
+
+      setTimeout(() => {
+        return router.push('/about');
+      }, 1000);
+    }
   };
 
   return (
@@ -105,7 +115,7 @@ const Home = () => {
                 <Image
                   src={'/images/bwood_portfolio_home.png'}
                   alt='Bodie Wood'
-                  className={`rounded-3xl profile-pic ${slideX === 1 ? 'slideX' : ''}`}
+                  className={`rounded-3xl profile-pic ${slideX === 1 ? 'slideX' : slideY === 1 ? 'slideY' : ''}`}
                   width={500}
                   height={100}
                 />
