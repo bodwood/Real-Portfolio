@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 
 const Home = () => {
   const [containerHeight, setContainerHeight] = useState(0);
+  const [viewportWidth, setViewportWidth] = useState(0);
   const [slideX, setSlideX] = useState(0);
   const [slideY, setSlideY] = useState(0);
   const router = useRouter();
@@ -28,6 +29,8 @@ const Home = () => {
 
     calculateContainerHeight();
 
+    setViewportWidth(window.innerWidth)
+
     const handleResize = () => {
       calculateContainerHeight();
     };
@@ -41,7 +44,8 @@ const Home = () => {
 
   const handleAboutMeClick = () => {
     console.log('container height' + containerHeight);
-    if (containerHeight < 700) {
+    console.log('viewport width' + viewportWidth)
+    if (viewportWidth > 768) {
       setSlideX(1);
 
       setTimeout(() => {

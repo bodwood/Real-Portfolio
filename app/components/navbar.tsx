@@ -43,7 +43,7 @@ const Navbar = () => {
 
           <div className='hidden md:flex items-center text-lg pr-2 space-x-12'>
             <div className='relative'>
-              <Link href='/Home'>Home</Link>
+              <Link href='/'>Home</Link>
             </div>
 
             <div className='relative'>
@@ -77,7 +77,7 @@ const Navbar = () => {
         <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           <div className='flex flex-col items-center text-lg space-y-4 pt-4 pb-10'>
             <div className='relative'>
-              <Link href='/Home'>Home</Link>
+              <Link href='/'>Home</Link>
             </div>
 
             <div className='relative'>
