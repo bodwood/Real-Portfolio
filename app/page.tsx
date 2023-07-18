@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faHand } from '@fortawesome/free-regular-svg-icons';
+import { faHand, faHandPointLeft } from '@fortawesome/free-regular-svg-icons';
 import { faComputerMouse, faArrowDown, faCode } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
@@ -126,14 +126,16 @@ const Home = () => {
               </div>
             </div>
             <div
-              className={`w-1/2 pl-2 md:pl-10 flex-row flex items-center cursor-pointer fade-away ${
+              className={`md:w-1/2 pl-2 md:pl-10 py-5 md:py-0 flex-row flex items-center justify-center cursor-pointer fade-away ${
                 slideX === 1 ? 'slideX' : ''
               }`}
               onClick={handleAboutMeClick}
             >
-              <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
-              <p className='inline'>About Me</p>
-              <FontAwesomeIcon icon={faArrowDown} className='pl-2 h-4 w-4' />
+              <div className='flex items-center justify-center text-center'>
+                <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
+                <p className='inline'>About Me</p>
+                <FontAwesomeIcon icon={faHandPointLeft} className='pl-2 md:pl-2 h-4 w-4' />
+              </div>
             </div>
           </div>
         </div>

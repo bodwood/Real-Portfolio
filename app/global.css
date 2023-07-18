@@ -60,3 +60,13 @@
   opacity: 0;
   transition: visibility 0s 1s, opacity 1s linear;
 }
+
+/*
+* About
+*/
+
+.about-experience-h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* margin-bottom: 0.5rem; */
+}
