@@ -70,3 +70,18 @@
   font-weight: 600;
   /* margin-bottom: 0.5rem; */
 }
+
+/*
+* Skills
+*/
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
