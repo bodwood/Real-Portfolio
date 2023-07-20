@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
+import Link from 'next/link';
 import '@/styles/about.css';
 
 const AboutMe = () => {
@@ -82,7 +83,7 @@ const AboutMe = () => {
                 <p>Full Stack Certificate</p>
               </div>
               <div className='flex items-center flex-col justify-center'>
-                <button>Skills</button>
+                <Link href='/skills'>Skills</Link>
               </div>
             </div>
             <div className='flex justify-center sm:justify-start py-5'>
