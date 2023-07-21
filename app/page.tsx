@@ -11,18 +11,20 @@ import Image from 'next/image';
 import './global.css';
 import { useRouter } from 'next/navigation';
 
-const Home = () => {
+
+const Home = ({}) => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [viewportWidth, setViewportWidth] = useState(0);
   const [slideX, setSlideX] = useState(0);
   const [slideY, setSlideY] = useState(0);
   const router = useRouter();
 
-  const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
+  const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
 
   useEffect(() => {
     const calculateContainerHeight = () => {
       const screenHeight = window.innerHeight;
+      const screenWidth = window.innerWidth;
       const newContainerHeight = isScreenHeightSmall ? screenHeight : (7 / 8) * screenHeight;
       setContainerHeight(newContainerHeight);
     };
@@ -63,7 +65,7 @@ const Home = () => {
   return (
     <div className='flex items-center justify-center h-screen'>
       <div
-        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full bg-white dark:bg-slate-800 overflow-auto md:overflow-hidden'
+        className='container mx-auto py-10 px-5 rounded-3xl shadow shadow-white bg-white dark:bg-slate-800 overflow-auto md:overflow-hidden'
         style={{ height: `${containerHeight}px` }}
       >
         <>
@@ -97,7 +99,7 @@ const Home = () => {
           <div className='w-full sm:pt-0 sm:h-1/2 md:w-5/6 md:h-3/4 md:pt-8 md:pt-16 pr-0 md:pr-24'>
             <div className='flex flex-col md:flex-row'>
               <div className={`w-full md:w-1/2 md:pt-20 fade-away ${slideX === 1 ? 'slideX' : ''}`}>
-                <p className='text-3xl text-center md:text-left xl:pt-10'>Hello, I'm Bodie</p>
+                <p className={`text-3xl text-center md:text-left xl:pt-10 font-normal`}>Hello, I'm Bodie</p>
                 <p className='text-lg pt-4 text-center md:text-left'>Full-Stack Engineer</p>
                 <p className='text-lg pt-2 pb-10 text-center md:text-left'>
                   High level web development experience, producing quality work.

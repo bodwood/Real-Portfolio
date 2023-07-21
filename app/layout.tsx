@@ -3,6 +3,13 @@ import React from 'react';
 import Navbar from './components/navbar';
 import { Footer } from './components/footer';
 import { aboutMeData, pages, contactMeLinks } from './data/data';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  weight: ['200', '400', '600', '700', '800', '900'], 
+  subsets: ['latin'],
+});
+
 
 export const metadata = {
   title: 'Next.js',
@@ -13,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <head />
-      <body className='bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600'>
+      <body className={`bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 ${poppins.className}`}>
         {/* <Navbar name={aboutMeData.name} pages={pages} contactMeLinks={contactMeLinks} /> */}
         {children}
       </body>

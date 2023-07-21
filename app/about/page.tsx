@@ -11,7 +11,7 @@ const AboutMe = () => {
   const [slideX, setSlideX] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
 
-  const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
+  const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
 
   useEffect(() => {
     const calculateContainerHeight = () => {
@@ -46,8 +46,8 @@ const AboutMe = () => {
         <>
           <Navbar />
         </>
-        <div className='w-full text-center'>
-          <h1 className='text-3xl font-bold'>About Me</h1>
+        <div className='w-full text-center pb-5 md:pb-0'>
+          <h1 className='text-3xl font-normal'>About Me</h1>
           <p>Who is Bodie?</p>
         </div>
         <div className='flex flex-col md:flex-row justify-center space-y-5 md:pt-10 md:px-10'>
@@ -63,7 +63,7 @@ const AboutMe = () => {
             </div>
           </div>
           <div className='md:w-1/2 md:pt-0'>
-            <p className='md:w-2/3'>
+            <p className='md:w-2/3 text-left'>
               Full Stack developer with extensive knowledge and experience working in web technologies, delivering
               quality work. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facere ab asperiores odio
               provident voluptatem. Voluptate maiores perspiciatis cumque, quae maxime incidunt officia explicabo,

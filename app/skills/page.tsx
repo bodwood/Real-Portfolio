@@ -11,7 +11,7 @@ import '@/styles/skills.css';
 const Skills = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
-  const isScreenHeightSmall = useMediaQuery({ query: '(max-height: 600px)' });
+  const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
 
   useEffect(() => {
     const calculateContainerHeight = () => {
@@ -131,7 +131,7 @@ const Skills = () => {
             <FontAwesomeIcon icon={faGitlab} className='fontAwesomeIcons' />
           </div>
           {/* TODO: Make icons cirlce around image: https://www.youtube.com/watch?v=zwl3kZPZ8H8 */}
-          <div className='flex-col md:w-1/3 mx-auto'>
+          <div className='flex-col md:w-1/3 mx-auto py-5 md:py-0'>
             <Image
               src={'/images/bwood_portfolio_home.png'}
               alt='Bodie Wood'
