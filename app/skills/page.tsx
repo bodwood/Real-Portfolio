@@ -46,44 +46,105 @@ const Skills = () => {
         <>
           <Navbar />
         </>
-        <div className='flex flex-col md:flex-row w-full'>
+        <div className='flex flex-col w-full items-center pb-5'>
+          <h1 className='text-3xl text-bold'>Skills</h1>
+          <p className='text-xl'>Technologies and Stuff</p>
         </div>
         <div className='flex flex-col md:flex-row'>
-          <div className='flex-col w-1/3'>
-            <FontAwesomeIcon icon={faReact} />
-            <Image src={'/images/redux_icon.png'} alt='Redux Logo' width={20} height={20} />
-            <FontAwesomeIcon icon={faNode} />
-            <FontAwesomeIcon icon={faSquareJs} />
-            <Image src={'/images/typescript_logo.png'} alt='TypeScript Logo' width={20} height={20} />
-            <Image src={'/images/firebase_icon.png'} alt='Firebase Logo' width={20} height={20} />
-            <Image src={'/images/express_icon.png'} alt='Express Logo' width={20} height={20} />
-            <Image src={'/images/tailwind_icon.png'} alt='TailwindCSS Logo' width={20} height={20} />
-            <Image src={'/images/chakraui_icon.png'} alt='Chakra UI Logo' width={20} height={20} />
-            <Image src={'/images/nextjs_icon.svg'} alt='Next.js Logo' width={20} height={20} />
-            <Image src={'/images/sql_icon.png'} alt='SQL' width={20} height={20} />
-            <Image src={'/images/mongodb_icon.png'} alt='MongoDB Logo' width={20} height={20} />
-            <Image src={'/images/postman_icon.png'} alt='Postman Logo' width={20} height={20} />
+          <div className='flex-col place-items-center md:w-1/3 grid grid-cols-3 md:grid-cols-6'>
+            <FontAwesomeIcon icon={faReact} className='fontAwesomeIcons' />
+            <Image
+              src={'/images/redux_icon.png'}
+              className='fontAwesomeIcons'
+              alt='Redux Logo'
+              width={40}
+              height={40}
+            />
+            <FontAwesomeIcon icon={faNode} className='fontAwesomeIcons' />
+            <FontAwesomeIcon icon={faSquareJs} className='fontAwesomeIcons' />
+            <Image
+              src={'/images/typescript_logo.png'}
+              className='fontAwesomeIcons'
+              alt='TypeScript Logo'
+              width={20}
+              height={20}
+            />
+            <Image
+              src={'/images/firebase_icon.png'}
+              className='fontAwesomeIcons'
+              alt='Firebase Logo'
+              width={20}
+              height={20}
+            />
+            <Image
+              src={'/images/express_icon.png'}
+              className='fontAwesomeIcons'
+              alt='Express Logo'
+              width={20}
+              height={20}
+            />
+            <Image
+              src={'/images/tailwind_icon.png'}
+              className='fontAwesomeIcons'
+              alt='TailwindCSS Logo'
+              width={20}
+              height={20}
+            />
+            <Image
+              src={'/images/chakraui_icon.png'}
+              className='fontAwesomeIcons'
+              alt='Chakra UI Logo'
+              width={20}
+              height={20}
+            />
+            <Image
+              src={'/images/nextjs_icon.svg'}
+              className='fontAwesomeIcons'
+              alt='Next.js Logo'
+              width={20}
+              height={20}
+            />
+            <Image src={'/images/sql_icon.png'} className='fontAwesomeIcons' alt='SQL' width={20} height={20} />
+            <Image
+              src={'/images/mongodb_icon.png'}
+              className='fontAwesomeIcons'
+              alt='MongoDB Logo'
+              width={20}
+              height={20}
+            />
+            <Image
+              src={'/images/postman_icon.png'}
+              className='fontAwesomeIcons'
+              alt='Postman Logo'
+              width={20}
+              height={20}
+            />
             <Image src={'/images/jest_icon.png'} alt='Jest Logo' width={20} height={20} />
-            <Image src={'/images/mysql_icon.png'} alt='MySQL Logo' width={20} height={20} />
-            <FontAwesomeIcon icon={faPhp} />
-            <FontAwesomeIcon icon={faGitlab} />
+            <Image
+              src={'/images/mysql_icon.png'}
+              className='fontAwesomeIcons'
+              alt='MySQL Logo'
+              width={20}
+              height={20}
+            />
+            <FontAwesomeIcon icon={faPhp} className='fontAwesomeIcons' />
+            <FontAwesomeIcon icon={faGitlab} className='fontAwesomeIcons' />
           </div>
           {/* TODO: Make icons cirlce around image: https://www.youtube.com/watch?v=zwl3kZPZ8H8 */}
-          <div className='flex-col w-1/3 circle'>
+          <div className='flex-col md:w-1/3 mx-auto'>
             <Image
               src={'/images/bwood_portfolio_home.png'}
               alt='Bodie Wood'
-              className='rounded-3xl center bodie-image'
+              className='rounded-3xl mx-auto bodie-image'
               height={400}
               width={400}
             />
           </div>
-          <div className='flex-col w-1/3'>
-            <FontAwesomeIcon icon={faGit} />
-            <FontAwesomeIcon icon={faBootstrap} />
+          <div className='flex-col md:w-1/3 text-center py-5 md:py-0'>
+            <h1 className='text-2xl'>Skills diagram</h1>
           </div>
         </div>
-        <div className='flex flex-col w-full'>Next Page</div>
+        <div className='flex w-full'>Next Page</div>
       </div>
     </div>
   );
