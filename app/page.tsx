@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <div className='flex items-center justify-center h-screen'>
       <div
-        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full bg-white overflow-auto md:overflow-hidden'
+        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full bg-white dark:bg-slate-800 overflow-auto md:overflow-hidden'
         style={{ height: `${containerHeight}px` }}
       >
         <>
