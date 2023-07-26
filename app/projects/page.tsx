@@ -54,11 +54,18 @@ const Skills = () => {
         <div className='flex flex-col md:flex-row w-full h-full'>
           <div className='w-1/2 h-1/2'>
             <Carousel className='flex flex-col'>
-              <img alt='...' src='https://flowbite.com/docs/images/carousel/carousel-1.svg' />
-              <img alt='...' src='https://flowbite.com/docs/images/carousel/carousel-2.svg' />
-              <img alt='...' src='https://flowbite.com/docs/images/carousel/carousel-3.svg' />
-              <img alt='...' src='https://flowbite.com/docs/images/carousel/carousel-4.svg' />
-              <img alt='...' src='https://flowbite.com/docs/images/carousel/carousel-5.svg' />
+              <a href='https://gear-up.onrender.com/' target='_blank'>
+                <img alt='...' src={'/images/gear-up-landing-page.jpeg'} />
+              </a>
+              <a href='https://backroadsadventure.netlify.app/' target='_blank'>
+                <img alt='...' src={'/images/backroads-landing-page.png'} />
+              </a>
+              <a href='https://quoted-net.netlify.app/' target='_blank'>
+                <img alt='...' src={'/images/quoted-landing-page.png'} />
+              </a>
+              <a href='https://deathstarhotel.netlify.app/' target='_blank'>
+                <img alt='...' src={'/images/death-star-landing-page.png'} />
+              </a>
             </Carousel>
           </div>
           <div className='w-1/2'>a</div>
