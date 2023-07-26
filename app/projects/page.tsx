@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Carousel } from 'flowbite-react';
 import '@/styles/skills.css';
 
-const Skills = () => {
+const Projects = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
   const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
@@ -52,10 +52,10 @@ const Skills = () => {
           <p className='text-xl'>Checkout my projects</p>
         </div>
         <div className='flex flex-col md:flex-row w-full h-full'>
-          <div className='w-1/2 h-1/2'>
+          <div className='w-full h-3/4'>
             <Carousel className='flex flex-col'>
               <a href='https://gear-up.onrender.com/' target='_blank'>
-                <img alt='...' src={'/images/gear-up-landing-page.jpeg'} />
+                <img alt='...' src={'/images/gearup-landing-page.png'} />
               </a>
               <a href='https://backroadsadventure.netlify.app/' target='_blank'>
                 <img alt='...' src={'/images/backroads-landing-page.png'} />
@@ -68,11 +68,10 @@ const Skills = () => {
               </a>
             </Carousel>
           </div>
-          <div className='w-1/2'>a</div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Skills;
+export default Projects;
