@@ -12,6 +12,8 @@ const Contact = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
   const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
+  const [email, setEmail] = useState('bodiewould@gmail.com');
+  const [message, setMessage] = useState('message');
 
   useEffect(() => {
     const calculateContainerHeight = () => {
@@ -52,7 +54,7 @@ const Contact = () => {
           <p className='text-xl'>Let's connect!</p>
         </div>
         <div
-          className='w-full h-1/3 flex flex-row grid-row-5 gap-4 md:gap-2 justify-center'
+          className='w-full h-1/9 flex flex-row grid-row-5 gap-4 md:gap-2 justify-center'
           style={{ color: 'grey-500' }}
         >
           <div>
@@ -71,7 +73,10 @@ const Contact = () => {
             <FontAwesomeIcon icon={faGithub} className='h-10 w-10' />
           </div>
         </div>
-        <div className='w-full h-2/3'>
+        <div className='w-full text-center pt-5'>
+          <h1>Send me a message</h1>
+          </div>
+        <div className='w-full h-1/3 md:w-1/2 py-5'>
           <form>
             <div className='relative z-0 w-full mb-6 group'>
               <input
@@ -80,47 +85,17 @@ const Contact = () => {
                 id='floating_email'
                 className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
                 placeholder=' '
+                onChange={(e: any) => setEmail(e.target.value)}
                 required
               />
               <label
-                // for='floating_email'
+                htmlFor='floating_email'
                 className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
               >
                 Email address
               </label>
             </div>
-            <div className='relative z-0 w-full mb-6 group'>
-              <input
-                type='password'
-                name='floating_password'
-                id='floating_password'
-                className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
-                placeholder=' '
-                required
-              />
-              <label
-                // for='floating_password'
-                className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
-              >
-                Password
-              </label>
-            </div>
-            <div className='relative z-0 w-full mb-6 group'>
-              <input
-                type='password'
-                name='repeat_password'
-                id='floating_repeat_password'
-                className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
-                placeholder=' '
-                required
-              />
-              <label
-                // for='floating_repeat_password'
-                className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
-              >
-                Confirm password
-              </label>
-            </div>
+
             <div className='grid md:grid-cols-2 md:gap-6'>
               <div className='relative z-0 w-full mb-6 group'>
                 <input
@@ -132,7 +107,7 @@ const Contact = () => {
                   required
                 />
                 <label
-                  // for='floating_first_name'
+                  htmlFor='floating_first_name'
                   className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                 >
                   First name
@@ -148,47 +123,24 @@ const Contact = () => {
                   required
                 />
                 <label
-                  // for='floating_last_name'
+                  htmlFor='floating_last_name'
                   className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                 >
                   Last name
                 </label>
               </div>
             </div>
-            <div className='grid md:grid-cols-2 md:gap-6'>
-              <div className='relative z-0 w-full mb-6 group'>
-                <input
-                  type='tel'
-                  pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-                  name='floating_phone'
-                  id='floating_phone'
-                  className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
-                  placeholder=' '
-                  required
-                />
-                <label
-                  // for='floating_phone'
-                  className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
-                >
-                  Phone number (123-456-7890)
-                </label>
-              </div>
-              <div className='relative z-0 w-full mb-6 group'>
-                <input
-                  type='text'
-                  name='floating_company'
-                  id='floating_company'
-                  className='block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
-                  placeholder=' '
-                  required
-                />
-                <label
-                  // for='floating_company'
-                  className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
-                >
-                  Company (Ex. Google)
-                </label>
-              </div>
+            <div className='relative z-0 w-full mb-6 group'>
+              <label htmlFor='message' className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+                Your message
+              </label>
+              <textarea
+                id='message'
+                rows={4}
+                className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                placeholder='Hi Bodie...'
+                onChange={(e: any) => setMessage(e.target.value)}
+              ></textarea>
             </div>
             <button
               type='submit'

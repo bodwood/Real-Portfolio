@@ -89,11 +89,11 @@ const Navbar = () => {
             </div>
 
             <div className='relative'>
-              <Link href='/Projects'>Projects</Link>
+              <Link href='/projects'>Projects</Link>
             </div>
 
             <div className='relative'>
-              <Link href='/Contact'>Contact</Link>
+              <Link href='/contact'>Contact</Link>
             </div>
 
             <div className='relative'>

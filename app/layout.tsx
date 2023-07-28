@@ -20,9 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <head />
       <body className={`bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 ${poppins.className}`}>
-        {/* <Navbar name={aboutMeData.name} pages={pages} contactMeLinks={contactMeLinks} /> */}
         {children}
-        <script type='text/javascript' src='../node_modules/tw-elements/dist/js/tw-elements.umd.min.js'></script>
       </body>
     </html>
   );

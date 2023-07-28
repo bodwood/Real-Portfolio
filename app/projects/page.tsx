@@ -55,7 +55,7 @@ const Projects = () => {
           <div className='w-full h-3/4'>
             <Carousel className='flex flex-col'>
               <a href='https://gear-up.onrender.com/' target='_blank'>
-                <img alt='...' src={'/images/gearup-landing-page.png'} />
+                <img alt='...' src={'/images/gear-up-landing-page.jpeg'} />
               </a>
               <a href='https://backroadsadventure.netlify.app/' target='_blank'>
                 <img alt='...' src={'/images/backroads-landing-page.png'} />
