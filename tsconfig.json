@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/api/email/route.ts"  ],
   "exclude": [
     "node_modules"
   ]
