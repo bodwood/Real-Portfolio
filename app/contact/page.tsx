@@ -72,6 +72,25 @@ const Contact = () => {
     } catch (error: any) {
       console.error('There was an error: ' + error);
     }
+
+    //Firebase
+        try {
+          const response = await fetch('/api/email', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          if (!response.ok) {
+            throw new Error('HTTP error! status: ' + response.statusText);
+          }
+
+          const responseData = await response.json();
+          console.log(responseData);
+        } catch (error: any) {
+          console.error('There was an error: ' + error);
+        }
     console.log(data);
   }
 
@@ -112,7 +131,7 @@ const Contact = () => {
         <div className='w-full text-center pt-5'>
           <h1>Send me a message</h1>
         </div>
-        <div className='w-full h-1/3 md:w-1/2 py-5'>
+        <div className='w-full h-1/3 py-5'>
           <form onSubmit={handleSubmit}>
             <div className='relative z-0 w-full mb-6 group'>
               <input
