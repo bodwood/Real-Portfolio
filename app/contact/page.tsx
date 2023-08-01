@@ -1,6 +1,6 @@
 'use client';
 import Navbar from '../components/navbar';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -14,6 +14,9 @@ const Contact = () => {
   const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
   const [email, setEmail] = useState('bodiewould@gmail.com');
   const [message, setMessage] = useState('message');
+  const [isMessageSent, setIsMessageSent] = useState<boolean>(false);
+
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
     const calculateContainerHeight = () => {
@@ -39,6 +42,20 @@ const Contact = () => {
     setFadeIn(true);
   }, []);
 
+  useEffect(() => {
+    //Form
+    let timeout: NodeJS.Timeout;
+    if (isMessageSent && formRef) {
+      formRef.current?.reset();
+      setTimeout(() => {
+        setIsMessageSent(false);
+      }, 2000);
+    }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isMessageSent]);
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const target = e.currentTarget;
@@ -55,6 +72,7 @@ const Contact = () => {
       message: message.value,
     };
 
+    //MongoDB
     try {
       const response = await fetch('/api/email', {
         method: 'POST',
@@ -66,31 +84,12 @@ const Contact = () => {
       if (!response.ok) {
         throw new Error('HTTP error! status: ' + response.statusText);
       }
-
+      setIsMessageSent(true);
       const responseData = await response.json();
       console.log(responseData);
     } catch (error: any) {
       console.error('There was an error: ' + error);
     }
-
-    //Firebase
-        try {
-          const response = await fetch('/api/email', {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
-          if (!response.ok) {
-            throw new Error('HTTP error! status: ' + response.statusText);
-          }
-
-          const responseData = await response.json();
-          console.log(responseData);
-        } catch (error: any) {
-          console.error('There was an error: ' + error);
-        }
     console.log(data);
   }
 
@@ -132,7 +131,7 @@ const Contact = () => {
           <h1>Send me a message</h1>
         </div>
         <div className='w-full h-1/3 py-5'>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} ref={formRef}>
             <div className='relative z-0 w-full mb-6 group'>
               <input
                 type='email'
@@ -203,6 +202,7 @@ const Contact = () => {
               Submit
             </button>
           </form>
+          {isMessageSent && <p> Message has been Sent</p>}
         </div>
       </div>
     </div>

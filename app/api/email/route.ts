@@ -37,7 +37,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     ...data,
     data: new Date(),
   };
-  
+
   try {
     await Message.create(newData);
     console.log('Message sent');
@@ -46,6 +46,4 @@ export async function POST(req: NextRequest, res: NextResponse) {
     console.log('Error sending message: ' + error);
     return NextResponse.json({ message: 'Error sending message' }, { status: 500 });
   }
-
-
 }
