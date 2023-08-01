@@ -40,7 +40,7 @@ const AboutMe = () => {
   return (
     <div className={`flex items-center justify-center h-screen ${fadeIn ? 'fade-in' : ''}`}>
       <div
-        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full bg-white overflow-auto md:overflow-hidden'
+        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full overflow-auto md:overflow-hidden bg-white dark:bg-gray-800'
         style={{ height: `${containerHeight}px` }}
       >
         <>

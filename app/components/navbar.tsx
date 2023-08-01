@@ -2,13 +2,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
+import { ThemeSwitcher } from './theme-switcher';
 
 const NavLink = ({ children }: { children: React.ReactNode }) => (
   <a className='px-2 py-1 rounded-md hover:text-white hover:bg-gray-700' href='#'>
     {children}
   </a>
 );
-
 
 const Navbar = () => {
   const [colorMode, setColorMode] = useState('light');
@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='bg-white dark:bg-gray-900 px-8 md:pt-4 pb-4'>
+      <div className='px-8 md:pt-4 pb-4'>
         <div className='h-16 flex justify-center items-center justify-between'>
           <div className={`md:pl-5 justify-center text-3xl `}>
             Bo
@@ -63,17 +63,7 @@ const Navbar = () => {
             </div>
 
             <div className='relative'>
-              <button
-                className='text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200'
-                onClick={toggleColorMode}
-              >
-                <span className='sr-only'>Toggle color mode</span>
-                {colorMode === 'light' ? (
-                  <FontAwesomeIcon icon={faMoon} className='h-8 w-8 text-blue' />
-                ) : (
-                  <FontAwesomeIcon icon={faSun} className='h-8 w-8' />
-                )}
-              </button>
+              <ThemeSwitcher />
             </div>
           </div>
         </div>
@@ -97,17 +87,7 @@ const Navbar = () => {
             </div>
 
             <div className='relative'>
-              <button
-                className='text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200'
-                onClick={toggleColorMode}
-              >
-                <span className='sr-only'>Toggle color mode</span>
-                {colorMode === 'light' ? (
-                  <FontAwesomeIcon icon={faMoon} className='h-8 w-8 text-blue' />
-                ) : (
-                  <FontAwesomeIcon icon={faSun} className='h-8 w-8' />
-                )}
-              </button>
+              <ThemeSwitcher />
             </div>
           </div>
         </div>

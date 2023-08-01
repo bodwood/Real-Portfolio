@@ -5,6 +5,11 @@ import { Footer } from './components/footer';
 import { aboutMeData, pages, contactMeLinks } from './data/data';
 import { Poppins } from 'next/font/google';
 
+//theme
+import { ThemeProvider } from './theme-provider';
+import { ThemeSwitcher } from './components/theme-switcher';
+import { switchThemeDuration } from './constants/switch-theme-duration';
+
 const poppins = Poppins({
   weight: ['200', '400', '600', '700', '800', '900'],
   subsets: ['latin'],
@@ -19,8 +24,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <head />
-      <body className={`bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 ${poppins.className}`}>
-        {children}
+      <body className={`bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 ${poppins.className} ${switchThemeDuration}`}>
+      {/* <body className={`${poppins.className} bg-slate-50 dark:bg-[#0d1117] ${switchThemeDuration}`}> */}
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

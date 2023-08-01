@@ -11,7 +11,6 @@ import Image from 'next/image';
 import './global.css';
 import { useRouter } from 'next/navigation';
 
-
 const Home = ({}) => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [viewportWidth, setViewportWidth] = useState(0);
@@ -31,7 +30,7 @@ const Home = ({}) => {
 
     calculateContainerHeight();
 
-    setViewportWidth(window.innerWidth)
+    setViewportWidth(window.innerWidth);
 
     const handleResize = () => {
       calculateContainerHeight();
@@ -46,7 +45,7 @@ const Home = ({}) => {
 
   const handleAboutMeClick = () => {
     console.log('container height' + containerHeight);
-    console.log('viewport width' + viewportWidth)
+    console.log('viewport width' + viewportWidth);
     if (viewportWidth > 768) {
       setSlideX(1);
 
@@ -65,7 +64,7 @@ const Home = ({}) => {
   return (
     <div className='flex items-center justify-center h-screen'>
       <div
-        className='container mx-auto py-10 px-5 rounded-3xl shadow shadow-white bg-white dark:bg-slate-800 overflow-auto md:overflow-hidden'
+        className='container mx-auto py-10 px-5 rounded-3xl shadow shadow-white bg-white dark:bg-gray-800 overflow-auto md:overflow-hidden'
         style={{ height: `${containerHeight}px` }}
       >
         <>
@@ -79,19 +78,29 @@ const Home = ({}) => {
                 style={{ color: 'grey-500' }}
               >
                 <div>
-                  <FontAwesomeIcon icon={faInstagram} className='h-10 w-10' />
+                  <a href='https://www.instagram.com/bodieodie/' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faInstagram} className='h-10 w-10' />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon icon={faYoutube} className='h-10 w-10' />
+                  <a href='https://www.youtube.com/mrawesome1821' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faYoutube} className='h-10 w-10' />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon icon={faTwitter} className='h-10 w-10' />
+                  <a href='https://twitter.com/BWDev95' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faTwitter} className='h-10 w-10' />
+                  </a>
                 </div>
                 <div className='md:pt-16'>
-                  <FontAwesomeIcon icon={faLinkedin} className='h-10 w-10' />
+                  <a href='https://www.linkedin.com/in/bodie-wood/' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faLinkedin} className='h-10 w-10' />
+                  </a>
                 </div>
                 <div>
-                  <FontAwesomeIcon icon={faGithub} className='h-10 w-10' />
+                  <a href='https://github.com/bodwood' target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon icon={faGithub} className='h-10 w-10' />
+                  </a>
                 </div>
               </div>
             </div>
