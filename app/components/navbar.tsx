@@ -1,22 +1,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { ThemeSwitcher } from './theme-switcher';
 
-const NavLink = ({ children }: { children: React.ReactNode }) => (
-  <a className='px-2 py-1 rounded-md hover:text-white hover:bg-gray-700' href='#'>
-    {children}
-  </a>
-);
-
 const Navbar = () => {
-  const [colorMode, setColorMode] = useState('light');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleColorMode = () => {
-    setColorMode(colorMode === 'light' ? 'dark' : 'light');
-  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -84,6 +73,10 @@ const Navbar = () => {
 
             <div className='relative'>
               <Link href='/contact'>Contact</Link>
+            </div>
+
+            <div className='relative'>
+              <Link href='/skills'>Skills</Link>
             </div>
 
             <div className='relative'>
