@@ -5,7 +5,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
     './node_modules/flowbite-react/**/*.js',
-    './public/**/*.html'
+    './public/**/*.html',
   ],
   darkMode: 'class',
   theme: {
@@ -37,6 +37,25 @@ module.exports = {
       },
       flexBasis: {
         '4/5': '66%',
+      },
+      screens: {
+        sm: '640px',
+        // => @media (min-width: 640px) { ... }
+
+        md: '768px',
+        // => @media (min-width: 768px) { ... }
+
+        lg: '1024px',
+        // => @media (min-width: 1024px) { ... }
+
+        xl: '1280px',
+        // => @media (min-width: 1280px) { ... }
+
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
+
+        '3xl': '2000px',
+        // => @media (min-width: 1536px) { ... }
       },
     },
   },

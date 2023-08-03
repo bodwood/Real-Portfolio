@@ -74,3 +74,44 @@
 .home-large {
   font-size: 5rem;
 }
+
+a#scroll-btn {
+  position: absolute;
+  border: 0.3em solid #7c3aed;
+  border-radius: 3em;
+}
+
+a#scroll-btn:before {
+  position: absolute;
+  content: "";
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: .5em;
+  height: .5em;
+  width: .5em;
+  background-color: #4671ce;
+  border-radius: 50%;
+  animation: move-down 2s infinite;
+}
+a#scroll-btn:after {
+  position: absolute;
+  content: "About Me";
+  width: 12em;
+  display: block;
+  width: 12em;
+  text-align: center;
+  left: -5.0em;
+  bottom: -2.5em;
+  letter-spacing: 3px;
+}
+
+@keyframes move-down {
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+}

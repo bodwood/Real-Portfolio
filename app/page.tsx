@@ -70,51 +70,52 @@ const Home = ({}) => {
       {viewportWidth > 768 ? (
         <div className='flex flex-col md:flex-row lg:grow'>
           {/* Social Media Icons */}
-          <div className='md:w-1/6 self-end text-center pb-20 2xl:pb-10'>
+          <div className='md:w-1/6 self-end text-center pb-10 2xl:pb-20'>
             <div className={`flex flex-col space-y-4 hidden md:block fade-away ${slideX === 1 ? 'slideX' : ''}`}>
               <div>
                 <a href='https://www.instagram.com/bodieodie/' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faInstagram} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                  <FontAwesomeIcon icon={faInstagram} className='h-12 w-12 3xl:h-16 3xl:w-16' />
                 </a>
               </div>
               <div>
                 <a href='https://www.youtube.com/mrawesome1821' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faYoutube} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                  <FontAwesomeIcon icon={faYoutube} className='h-12 w-12 3xl:h-16 3xl:w-16' />
                 </a>
               </div>
               <div>
                 <a href='https://twitter.com/BWDev95' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faTwitter} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                  <FontAwesomeIcon icon={faTwitter} className='h-12 w-12 3xl:h-16 3xl:w-16' />
                 </a>
               </div>
               <div className='md:pt-16'>
                 <a href='https://www.linkedin.com/in/bodie-wood/' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faLinkedin} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                  <FontAwesomeIcon icon={faLinkedin} className='h-12 w-12 3xl:h-16 3xl:w-16' />
                 </a>
               </div>
               <div>
                 <a href='https://github.com/bodwood' target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon icon={faGithub} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                  <FontAwesomeIcon icon={faGithub} className='h-12 w-12 3xl:h-16 3xl:w-16' />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Description and Buttons */}
-          <div className='flex flex-col self-center md:items-start md:w-1/2'>
+          <div className='flex flex-col justify-center md:items-start md:w-1/2 2xl:pb-10 xl:pb-0 h-full'>
             <div className={`fade-away ${slideX === 1 ? 'slideX' : ''}`}>
-              <div>
+              <div className='flex xl:pb-5'>
                 <p className={`text-3xl text-center md:text-left font-normal`}>Hello, I'm Bodie</p>
               </div>
-              <div>
-                <p className='text-lg pt-4 text-center md:text-left'>Full-Stack Engineer</p>
+              <div className='flex xl:pb-3'>
+                <p className='text-lg text-center md:text-left'>Full-Stack Engineer</p>
               </div>
-              <div>
-                <p className='text-lg pt-2 pb-10 text-center md:text-left'>
+              <div className='flex xl:pb-5'>
+                <p className='text-lg text-center md:text-left'>
                   High level web development experience, producing quality work. Full Stack Engineer with a passion for
                   sleek design and user experience.
                 </p>
               </div>
+
               <div className='flex justify-center md:justify-start'>
                 <a
                   href='contact'
@@ -127,17 +128,10 @@ const Home = ({}) => {
                   </span>
                 </a>
               </div>
-            </div>
 
-            <div
-              className={`justify-center items-center text-center py-3 md:py-0 self-center ${
-                slideX === 1 ? 'slideX' : ''
-              }`}
-              onClick={handleAboutMeClick}
-            >
-              <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
-              <p className='inline'>About Me</p>
-              <FontAwesomeIcon icon={faHandPointLeft} className='pl-2 md:pl-2 h-4 w-4' />
+              <div className='flex flex-col grow items-center pt-10 2xl:justify-end 3xl:pt-20 3xl:justify-end h-1/2'>
+                <a id='scroll-btn' className='md:h-16 md:w-12 3xl:h-20 3xl:w-14'></a>
+              </div>
             </div>
           </div>
           {/* Image */}
@@ -149,7 +143,7 @@ const Home = ({}) => {
               height={800}
               width={800}
               style={{
-                width: '80%',
+                width: '90%',
                 height: 'auto',
               }}
             />

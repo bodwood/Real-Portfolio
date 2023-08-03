@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <div className='px-8 md:pt-4 2xl:pt-10'>
         <div className='h-16 flex justify-center items-center justify-between'>
-          <div className={`md:pl-5 justify-center text-3xl 2xl:text-6xl`}>
+          <div className={`md:pl-5 justify-center text-3xl 2xl:text-4xl`}>
             Bo
             <p className='inline text-blue'>d</p>ie
           </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className='hidden md:flex items-center text-lg 2xl:text-4xl pr-2 space-x-12'>
+          <div className='hidden md:flex items-center text-lg 2xl:text-3xl pr-2 space-x-12'>
             <div className='relative'>
               <Link href='/'>Home</Link>
             </div>
