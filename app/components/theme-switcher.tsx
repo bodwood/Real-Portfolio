@@ -28,9 +28,9 @@ export const ThemeSwitcher = () => {
     >
       <span className='sr-only'>Toggle color mode</span>
       {theme === 'light' ? (
-        <FontAwesomeIcon icon={faMoon} className='h-8 w-8 text-blue' />
+        <FontAwesomeIcon icon={faMoon} className='h-8 w-8 text-blue 2xl:h-12 2xl:w-12' />
       ) : (
-        <FontAwesomeIcon icon={faSun} className='h-8 w-8' />
+        <FontAwesomeIcon icon={faSun} className='h-8 w-8 2xl:h-12 2xl:w-12' />
       )}
     </button>
   );

@@ -18,6 +18,11 @@ const Home = ({}) => {
   const [slideY, setSlideY] = useState(0);
   const router = useRouter();
 
+  const imageStyle = {
+    borderRadius: '50%',
+    border: '1px solid #fff',
+  };
+
   const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
 
   const handleAboutMeClick = () => {
@@ -38,53 +43,173 @@ const Home = ({}) => {
     }
   };
 
+  const updateViewportWidth = () => {
+    setViewportWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    // Initial update
+    updateViewportWidth();
+
+    // Attach the event listener for resize events
+    window.addEventListener('resize', updateViewportWidth);
+
+    // Cleanup: remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', updateViewportWidth);
+    };
+  }, []);
+
   return (
-    <div className='home-container flex flex-col w-7/8 p-5 md:py-5 bg-white rounded-3xl my-10 mx-5 dark:bg-gray-800 overflow-auto '>
+    <div
+      className='home 2xl:home-large flex flex-col lg:grow w-7/8 p-5 md:py-5 bg-white rounded-3xl md:my-10 md:mx-10 dark:bg-gray-800 overflow-auto '
+      style={viewportWidth > 768 ? { height: '90vh' } : { height: '100vh' }}
+    >
       <>
         <Navbar />
       </>
-      <div className='flex flex-col md:flex-row h-full'>
-        {/* Social Media Icons */}
-        <div className='md:w-1/6 self-end 2xl:self-center text-center pb-5'>
-          <div className={`flex flex-col space-y-4 hidden md:block fade-away ${slideX === 1 ? 'slideX' : ''}`}>
-            <div>
-              <a href='https://www.instagram.com/bodieodie/' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faInstagram} className='h-10 w-10' />
-              </a>
-            </div>
-            <div>
-              <a href='https://www.youtube.com/mrawesome1821' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faYoutube} className='h-10 w-10' />
-              </a>
-            </div>
-            <div>
-              <a href='https://twitter.com/BWDev95' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faTwitter} className='h-10 w-10' />
-              </a>
-            </div>
-            <div className='md:pt-16'>
-              <a href='https://www.linkedin.com/in/bodie-wood/' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faLinkedin} className='h-10 w-10' />
-              </a>
-            </div>
-            <div>
-              <a href='https://github.com/bodwood' target='_blank' rel='noopener noreferrer'>
-                <FontAwesomeIcon icon={faGithub} className='h-10 w-10' />
-              </a>
+      {viewportWidth > 768 ? (
+        <div className='flex flex-col md:flex-row lg:grow'>
+          {/* Social Media Icons */}
+          <div className='md:w-1/6 self-end text-center pb-20 2xl:pb-10'>
+            <div className={`flex flex-col space-y-4 hidden md:block fade-away ${slideX === 1 ? 'slideX' : ''}`}>
+              <div>
+                <a href='https://www.instagram.com/bodieodie/' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faInstagram} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                </a>
+              </div>
+              <div>
+                <a href='https://www.youtube.com/mrawesome1821' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faYoutube} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                </a>
+              </div>
+              <div>
+                <a href='https://twitter.com/BWDev95' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faTwitter} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                </a>
+              </div>
+              <div className='md:pt-16'>
+                <a href='https://www.linkedin.com/in/bodie-wood/' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faLinkedin} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                </a>
+              </div>
+              <div>
+                <a href='https://github.com/bodwood' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faGithub} className='h-12 w-12 2xl:h-20 2xl:w-20' />
+                </a>
+              </div>
             </div>
           </div>
+
+          {/* Description and Buttons */}
+          <div className='flex flex-col self-center md:items-start md:w-1/2'>
+            <div className={`fade-away ${slideX === 1 ? 'slideX' : ''}`}>
+              <div>
+                <p className={`text-3xl text-center md:text-left font-normal`}>Hello, I'm Bodie</p>
+              </div>
+              <div>
+                <p className='text-lg pt-4 text-center md:text-left'>Full-Stack Engineer</p>
+              </div>
+              <div>
+                <p className='text-lg pt-2 pb-10 text-center md:text-left'>
+                  High level web development experience, producing quality work. Full Stack Engineer with a passion for
+                  sleek design and user experience.
+                </p>
+              </div>
+              <div className='flex justify-center md:justify-start'>
+                <a
+                  href='contact'
+                  className='relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-purple-500'
+                >
+                  <span className='absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700'></span>
+                  <span className='absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease'></span>
+                  <span className='relative text-white'>
+                    Contact Me <FontAwesomeIcon icon={faHand} className='pl-2' />
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div
+              className={`justify-center items-center text-center py-3 md:py-0 self-center ${
+                slideX === 1 ? 'slideX' : ''
+              }`}
+              onClick={handleAboutMeClick}
+            >
+              <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
+              <p className='inline'>About Me</p>
+              <FontAwesomeIcon icon={faHandPointLeft} className='pl-2 md:pl-2 h-4 w-4' />
+            </div>
+          </div>
+          {/* Image */}
+          <div className='flex flex-col md:w-1/2 justify-self-start self-center grow'>
+            <Image
+              src={'/images/bwood_portfolio_home.png'}
+              alt='Bodie Wood'
+              className={`rounded-3xl ${slideX === 1 ? 'slideX' : slideY === 1 ? 'slideY' : ''}`}
+              height={800}
+              width={800}
+              style={{
+                width: '80%',
+                height: 'auto',
+              }}
+            />
+          </div>
         </div>
-        {/* Description and Buttons */}
-        <div className='flex flex-col self-center md:items-start md:w-1/2'>
-          <div className={`fade-away ${slideX === 1 ? 'slideX' : ''}`}>
-            <div>
-              <p className={`text-3xl text-center md:text-left font-normal`}>Hello, I'm Bodie</p>
+      ) : (
+        <div className='flex flex-col md:flex-row h-full'>
+          {/* Social Media Icons */}
+          <div className='md:w-1/6 self-end 2xl:self-center text-center pb-5'>
+            <div className={`flex flex-col space-y-4 hidden md:block fade-away ${slideX === 1 ? 'slideX' : ''}`}>
+              <div>
+                <a href='https://www.instagram.com/bodieodie/' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faInstagram} className='h-10 w-10' />
+                </a>
+              </div>
+              <div>
+                <a href='https://www.youtube.com/mrawesome1821' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faYoutube} className='h-10 w-10' />
+                </a>
+              </div>
+              <div>
+                <a href='https://twitter.com/BWDev95' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faTwitter} className='h-10 w-10' />
+                </a>
+              </div>
+              <div className='md:pt-16'>
+                <a href='https://www.linkedin.com/in/bodie-wood/' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faLinkedin} className='h-10 w-10' />
+                </a>
+              </div>
+              <div>
+                <a href='https://github.com/bodwood' target='_blank' rel='noopener noreferrer'>
+                  <FontAwesomeIcon icon={faGithub} className='h-10 w-10' />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Description and Buttons */}
+          <div className='flex flex-col'>
+            <div className={`fade-away ${slideX === 1 ? 'slideX' : ''}`}>
+              <div>
+                <p className={`text-3xl text-center font-normal`}>Hello, I'm Bodie</p>
+              </div>
+              <div className='p-5'>
+                <p className='text-lg text-center'>Full-Stack Engineer</p>
+              </div>
+              {/* Image */}
+              <div className='flex justify-center'>
+                <Image
+                  src={'/images/bwood_portfolio_home.png'}
+                  alt='Bodie Wood'
+                  className={`rounded-3xl ${slideX === 1 ? 'slideX' : slideY === 1 ? 'slideY' : ''}`}
+                  width={300}
+                  height={300}
+                />
+              </div>
             </div>
             <div>
-              <p className='text-lg pt-4 text-center md:text-left'>Full-Stack Engineer</p>
-            </div>
-            <div>
-              <p className='text-lg pt-2 pb-10 text-center md:text-left'>
+              <p className='text-lg p-5 text-center'>
                 High level web development experience, producing quality work. Full Stack Engineer with a passion for
                 sleek design and user experience.
               </p>
@@ -102,27 +227,8 @@ const Home = ({}) => {
               </a>
             </div>
           </div>
-
-          <div
-            className={`justify-center items-center text-center py-3 md:py-0 self-center ${slideX === 1 ? 'slideX' : ''}`}
-            onClick={handleAboutMeClick}
-          >
-            <FontAwesomeIcon icon={faCode} className='pr-2 h-6 w-6 text-grey' />
-            <p className='inline'>About Me</p>
-            <FontAwesomeIcon icon={faHandPointLeft} className='pl-2 md:pl-2 h-4 w-4' />
-          </div>
         </div>
-        {/* Image */}
-        <div className='flex flex-col md:w-1/2 justify-self-start self-center'>
-          <Image
-            src={'/images/bwood_portfolio_home.png'}
-            alt='Bodie Wood'
-            className={`rounded-3xl ${slideX === 1 ? 'slideX' : slideY === 1 ? 'slideY' : ''}`}
-            width={500}
-            height={500}
-          />
-        </div>
-      </div>
+      )}
     </div>
   );
 };
