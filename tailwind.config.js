@@ -57,6 +57,9 @@ module.exports = {
         '3xl': '2000px',
         // => @media (min-width: 1536px) { ... }
       },
+      scale: {
+        200: '2.00',
+      },
     },
   },
   plugins: [require('flowbite/plugin')],

@@ -11,38 +11,33 @@ import '@/styles/skills.css';
 const Skills = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
-  const isScreenHeightSmall = useMediaQuery({ query: '(max-width: 768px)' });
-
-  useEffect(() => {
-    const calculateContainerHeight = () => {
-      const screenHeight = window.innerHeight;
-      const newContainerHeight = isScreenHeightSmall ? screenHeight : (7 / 8) * screenHeight;
-      setContainerHeight(newContainerHeight);
-    };
-
-    calculateContainerHeight();
-
-    const handleResize = () => {
-      calculateContainerHeight();
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [isScreenHeightSmall]);
+  const [viewportWidth, setViewportWidth] = useState(0);
 
   useEffect(() => {
     setFadeIn(true);
   }, []);
 
+  const updateViewportWidth = () => {
+    setViewportWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    // Initial update
+    updateViewportWidth();
+
+    // Attach the event listener for resize events
+    window.addEventListener('resize', updateViewportWidth);
+
+    // Cleanup: remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', updateViewportWidth);
+    };
+  }, []);
+
   return (
-    <div className={`flex items-center justify-center h-screen ${fadeIn ? 'fade-in' : ''}`}>
-      <div
-        className='container mx-auto px-10 py-5 rounded-3xl shadow shadow-white h-full bg-white dark:bg-gray-800 overflow-auto md:overflow-hidden'
-        style={{ height: `${containerHeight}px` }}
-      >
+    <div
+      className='home 2xl:home-large flex flex-col lg:grow w-7/8 p-5 md:py-5 bg-white rounded-3xl md:my-10 md:mx-10 dark:bg-gray-800 overflow-auto '
+      style={viewportWidth > 768 ? { height: '90vh' } : { height: '100vh' }}
+    >
         <>
           <Navbar />
         </>
@@ -146,7 +141,7 @@ const Skills = () => {
         </div>
         <div className='flex w-full'>Next Page</div>
       </div>
-    </div>
+
   );
 };
 
