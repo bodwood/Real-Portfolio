@@ -12,6 +12,7 @@ import '@/styles/skills.css';
 const Projects = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
+  const [contain, setContain] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(0);
 
   useEffect(() => {
@@ -85,7 +86,7 @@ const Projects = () => {
               <div className='grid grid-cols-2 gap gap-4 w-full items-center p-2 mx-auto'>
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-landing-page.png'}
+                  src={'/images/afterwise-small-one.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -97,7 +98,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-landing-page.png'}
+                  src={'/images/afterwise-small-two.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -109,7 +110,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-landing-page.png'}
+                  src={'/images/afterwise-small-three.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -121,7 +122,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-landing-page.png'}
+                  src={'/images/afterwise-small-four.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -139,7 +140,7 @@ const Projects = () => {
               <div className='grid grid-cols-2 gap gap-4 w-full items-center p-2 mx-auto'>
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/quoted-landing-page.png'}
+                  src={'/images/quoted-small-one.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -151,7 +152,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/quoted-landing-page.png'}
+                 src={'/images/quoted-small-two.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -163,7 +164,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/quoted-landing-page.png'}
+                    src={'/images/quoted-small-three.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -175,7 +176,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/quoted-landing-page.png'}
+                  src={'/images/quoted-small-four.png'}
                   alt='image'
                   height={600}
                   width={600}
@@ -208,7 +209,7 @@ const Projects = () => {
             <div className='flex flex-col h-full p-2'>
               <Image
                 className='rounded-lg'
-                src={'/images/gear-up-landing-page.jpeg'}
+                src={'/images/gear-up-landing-page.png'}
                 alt='image'
                 height={800}
                 width={800}
@@ -224,7 +225,7 @@ const Projects = () => {
               <div className='grid grid-cols-4 gap gap-4 w-full p-2 h-full items-center'>
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-landing-page.jpeg'}
+                  src={'/images/gear-up-small-one.png'}
                   alt='image'
                   height={800}
                   width={800}
@@ -237,7 +238,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-landing-page.jpeg'}
+                  src={'/images/gear-up-small-two.png'}
                   alt='image'
                   height={800}
                   width={800}
@@ -250,7 +251,7 @@ const Projects = () => {
                 />
                 <Image
                   className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-landing-page.jpeg'}
+                  src={'/images/gear-up-small-three.png'}
                   alt='image'
                   height={800}
                   width={800}
@@ -262,8 +263,8 @@ const Projects = () => {
                   }}
                 />
                 <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-landing-page.jpeg'}
+                  className={`rounded-lg hover:scale-200`}
+                  src={'/images/gear-up-small-four.png'}
                   alt='image'
                   height={800}
                   width={800}
@@ -271,7 +272,7 @@ const Projects = () => {
                   style={{
                     width: '100%',
                     height: '70%',
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                   }}
                 />
               </div>
