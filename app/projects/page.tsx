@@ -12,7 +12,7 @@ import '@/styles/skills.css';
 const Projects = () => {
   const [containerHeight, setContainerHeight] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
-  const [contain, setContain] = useState(false);
+  const [contain, setContain] = useState('cover');
   const [viewportWidth, setViewportWidth] = useState(0);
 
   useEffect(() => {
@@ -66,213 +66,47 @@ const Projects = () => {
           </Carousel>
         </div>
       ) : (
-        <div className='flex flex-row w-full h-full space-x-4'>
-          <div className='w-1/2 h-full p-2'>
-            {/* Afterwise image and Quoted image */}
-            {/* Add a few images on the right and top */}
-            <div className='flex flex-row h-1/2 p-2'>
-              <Image
-                className='rounded-lg'
-                src={'/images/afterwise-landing-page.png'}
-                alt='image'
-                height={400}
-                width={400}
-                quality={100}
-                style={{
-                  objectFit: 'cover',
-                }}
-              />
-              {/* Make component */}
-              <div className='grid grid-cols-2 gap gap-4 w-full items-center p-2 mx-auto'>
+        <div className='flex flex-col md:flex-row w-full h-full p-4'>
+          <div className='flex flex-col w-1/2 h-full'>
+            <div className='grid grid-cols-1 h-full space-y-4'>
+              <div className='relative'>
                 <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-small-one.png'}
+                  className='rounded-lg hover:blur-sm cursor-pointer'
+                  src={'/images/gear-up-landing-page.png'}
                   alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
+                  fill
+                  sizes='100vw'
                   style={{
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-small-two.png'}
-                  alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
-                  style={{
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-small-three.png'}
-                  alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
-                  style={{
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/afterwise-small-four.png'}
-                  alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
-                  style={{
-                    height: '100%',
                     objectFit: 'cover',
                   }}
                 />
               </div>
-            </div>
-
-            <div className='flex flex-row h-1/2 p-2'>
-              {/* Make component */}
-              <div className='grid grid-cols-2 gap gap-4 w-full items-center p-2 mx-auto'>
+              <div className='relative'>
                 <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/quoted-small-one.png'}
+                  className='rounded-lg hover:blur-sm cursor-pointer'
+                  src={'/images/quoted-landing-page.png'}
                   alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
+                  sizes='100vw'
+                  fill
                   style={{
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                 src={'/images/quoted-small-two.png'}
-                  alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
-                  style={{
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                    src={'/images/quoted-small-three.png'}
-                  alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
-                  style={{
-                    height: '100%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/quoted-small-four.png'}
-                  alt='image'
-                  height={600}
-                  width={600}
-                  quality={100}
-                  style={{
-                    height: '100%',
                     objectFit: 'cover',
                   }}
                 />
               </div>
-
-              <Image
-                className='rounded-lg'
-                src={'/images/quoted-landing-page.png'}
-                alt='image'
-                height={600}
-                width={600}
-                quality={100}
-                style={{
-                  width: '70%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
             </div>
           </div>
-
-          <div className='w-1/2 h-full'>
-            {/* Add a few images on the bottom and left */}
-            <div className='flex flex-col h-full p-2'>
-              <Image
-                className='rounded-lg'
-                src={'/images/gear-up-landing-page.png'}
-                alt='image'
-                height={800}
-                width={800}
-                quality={100}
-                style={{
-                  width: '100%',
-                  height: '70%',
-                  objectFit: 'cover',
-                }}
-              />
-
-              {/* Make component */}
-              <div className='grid grid-cols-4 gap gap-4 w-full p-2 h-full items-center'>
+          <div className='flex flex-col md:flex-row w-1/2 h-full pl-4'>
+            <div className='grid grid-cols-1 h-full w-full'>
+              <div className='relative'>
                 <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-small-one.png'}
+                  className='rounded-lg hover:blur-sm cursor-pointer'
+                  src={'/images/afterwise-landing-page.png'}
                   alt='image'
-                  height={800}
-                  width={800}
-                  quality={100}
+                  sizes='100vw'
+                  fill
                   style={{
-                    width: '100%',
-                    height: '70%',
                     objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-small-two.png'}
-                  alt='image'
-                  height={800}
-                  width={800}
-                  quality={100}
-                  style={{
-                    width: '100%',
-                    height: '70%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className='rounded-lg hover:scale-200'
-                  src={'/images/gear-up-small-three.png'}
-                  alt='image'
-                  height={800}
-                  width={800}
-                  quality={100}
-                  style={{
-                    width: '100%',
-                    height: '70%',
-                    objectFit: 'cover',
-                  }}
-                />
-                <Image
-                  className={`rounded-lg hover:scale-200`}
-                  src={'/images/gear-up-small-four.png'}
-                  alt='image'
-                  height={800}
-                  width={800}
-                  quality={100}
-                  style={{
-                    width: '100%',
-                    height: '70%',
-                    objectFit: 'contain',
+                    objectPosition: 'top',
                   }}
                 />
               </div>
