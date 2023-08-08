@@ -95,10 +95,9 @@ const Projects = () => {
           <option>QA</option>
         </select>
       </div>
-      <ul className='hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400 border'>
+      <ul className='hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400 border cursor-pointer'>
         <li className='w-full' onClick={() => showProjects('featured')}>
           <a
-            href='#'
             className={`${
               featuredProjects && 'active bg-gray-200 text-gray-900 dark:text-white dark:bg-gray-700'
             } inline-block w-full p-4 hover:text-gray-700 hover:bg-gray-200 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:hover:bg-gray-700 rounded-l-lg`}
@@ -109,7 +108,6 @@ const Projects = () => {
         </li>
         <li className='w-full' onClick={() => showProjects('react')}>
           <a
-            href='#'
             className={`${
               reactProjects && 'active bg-gray-200 text-gray-900 dark:text-white dark:bg-gray-700'
             } inline-block w-full p-4 hover:text-gray-700 hover:bg-gray-200 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:hover:bg-gray-700`}
@@ -119,7 +117,6 @@ const Projects = () => {
         </li>
         <li className='w-full' onClick={() => showProjects('csharp')}>
           <a
-            href='#'
             className={`${
               cSharpProjects && 'active bg-gray-200 text-gray-900 dark:text-white dark:bg-gray-700'
             } inline-block w-full p-4 hover:text-gray-700 hover:bg-gray-200 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:hover:bg-gray-700`}
@@ -129,7 +126,6 @@ const Projects = () => {
         </li>
         <li className='w-full' onClick={() => showProjects('qa')}>
           <a
-            href='#'
             className={`${
               qaProjects && 'active bg-gray-200 text-gray-900 dark:text-white dark:bg-gray-700'
             } inline-block w-full p-4 rounded-r-lg hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:text-white dark:hover:bg-gray-700`}
@@ -143,45 +139,51 @@ const Projects = () => {
           <div className='flex flex-col md:w-1/2 h-full'>
             <div className='grid grid-cols-1 h-full space-y-4'>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/gear-up-landing-page.png'}
-                  alt='image'
-                  fill
-                  sizes='100vw'
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
+                <a href='https://gear-up.onrender.com/' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/gear-up-landing-page.png'}
+                    alt='image'
+                    fill
+                    sizes='100vw'
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </a>
               </div>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/quoted-landing-page.png'}
-                  alt='image'
-                  sizes='100vw'
-                  fill
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
+                <a href='https://quoted-net.netlify.app/' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/quoted-landing-page.png'}
+                    alt='image'
+                    sizes='100vw'
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
           <div className='flex flex-col md:flex-row md:w-1/2 h-full pt-4 md:pt-0 md:pl-4 md:pl-0'>
             <div className='grid grid-cols-1 h-1/2 md:h-full w-full'>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/afterwise-landing-page.png'}
-                  alt='image'
-                  sizes='100vw'
-                  fill
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'top',
-                  }}
-                />
+                <a href='https://afterwiserecords.com/' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/afterwise-landing-page.png'}
+                    alt='image'
+                    sizes='100vw'
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -192,18 +194,21 @@ const Projects = () => {
           <div className='flex flex-col md:w-1/2 h-full'>
             <div className='grid grid-cols-1 h-full space-y-4'>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/backroads-landing-page.png'}
-                  alt='image'
-                  fill
-                  sizes='100vw'
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
+                <a href='https://backroadsadventure.netlify.app/' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/backroads-landing-page.png'}
+                    alt='image'
+                    fill
+                    sizes='100vw'
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </a>
               </div>
               <div className='relative'>
+                <a href='https://quoted-net.netlify.app/' target='_blank'>
                 <Image
                   className='rounded-lg hover:blur-sm cursor-pointer'
                   src={'/images/quoted-landing-page.png'}
@@ -214,12 +219,14 @@ const Projects = () => {
                     objectFit: 'cover',
                   }}
                 />
+                </a>
               </div>
             </div>
           </div>
           <div className='flex flex-col md:flex-row md:w-1/2 h-full pt-4 md:pt-0 md:pl-4 md:pl-0'>
             <div className='grid grid-cols-1 h-1/2 md:h-full w-full'>
               <div className='relative'>
+                <a href='https://gear-up.onrender.com/' target='_blank'>
                 <Image
                   className='rounded-lg hover:blur-sm cursor-pointer'
                   src={'/images/gear-up-landing-page.png'}
@@ -231,6 +238,7 @@ const Projects = () => {
                     objectPosition: 'top',
                   }}
                 />
+                </a>
               </div>
             </div>
           </div>
