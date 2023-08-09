@@ -1,7 +1,6 @@
 'use client';
 import Navbar from '../components/navbar';
 import { useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import Link from 'next/link';
 import '@/styles/about.css';

@@ -1,13 +1,9 @@
 import './global.css';
 import React from 'react';
-import Navbar from './components/navbar';
-import { Footer } from './components/footer';
-import { aboutMeData, pages, contactMeLinks } from './data/data';
 import { Poppins } from 'next/font/google';
 
 //theme
 import { ThemeProvider } from './theme-provider';
-import { ThemeSwitcher } from './components/theme-switcher';
 import { switchThemeDuration } from './constants/switch-theme-duration';
 
 const poppins = Poppins({
