@@ -209,16 +209,16 @@ const Projects = () => {
               </div>
               <div className='relative'>
                 <a href='https://quoted-net.netlify.app/' target='_blank'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/quoted-landing-page.png'}
-                  alt='image'
-                  sizes='100vw'
-                  fill
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/quoted-landing-page.png'}
+                    alt='image'
+                    sizes='100vw'
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
                 </a>
               </div>
             </div>
@@ -227,17 +227,17 @@ const Projects = () => {
             <div className='grid grid-cols-1 h-1/2 md:h-full w-full'>
               <div className='relative'>
                 <a href='https://gear-up.onrender.com/' target='_blank'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/gear-up-landing-page.png'}
-                  alt='image'
-                  sizes='100vw'
-                  fill
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'top',
-                  }}
-                />
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/gear-up-landing-page.png'}
+                    alt='image'
+                    sizes='100vw'
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                    }}
+                  />
                 </a>
               </div>
             </div>
@@ -277,17 +277,19 @@ const Projects = () => {
           <div className='flex flex-col md:flex-row md:w-1/2 h-full pt-4 md:pt-0 md:pl-4 md:pl-0'>
             <div className='grid grid-cols-1 h-1/2 md:h-full w-full'>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/afterwise-landing-page.png'}
-                  alt='image'
-                  sizes='100vw'
-                  fill
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'top',
-                  }}
-                />
+                <a href='https://github.com/bodwood/Sweets-and-Treats' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/sweets-treats-landing-page.jpeg'}
+                    alt='image'
+                    sizes='100vw'
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
