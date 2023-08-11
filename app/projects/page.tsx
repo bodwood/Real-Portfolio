@@ -249,28 +249,32 @@ const Projects = () => {
           <div className='flex flex-col md:w-1/2 h-full'>
             <div className='grid grid-cols-1 h-full space-y-4'>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/mechanic-factory-landing-page.jpeg'}
-                  alt='image'
-                  fill
-                  sizes='100vw'
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
+                <a href='https://github.com/bodwood/Mechanic-Factory' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/mechanic-factory-landing-page.jpeg'}
+                    alt='image'
+                    fill
+                    sizes='100vw'
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </a>
               </div>
               <div className='relative'>
-                <Image
-                  className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/search-coach-landing-page.png'}
-                  alt='image'
-                  sizes='100vw'
-                  fill
-                  style={{
-                    objectFit: 'cover',
-                  }}
-                />
+                <a href='https://github.com/bodwood/search-coach' target='_blank'>
+                  <Image
+                    className='rounded-lg hover:blur-sm cursor-pointer'
+                    src={'/images/search-coach-landing-page.png'}
+                    alt='image'
+                    sizes='100vw'
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </a>
               </div>
             </div>
           </div>
