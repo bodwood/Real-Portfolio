@@ -139,7 +139,6 @@ const Skills = () => {
             <h1 className='text-2xl'>Skills diagram</h1>
           </div>
         </div>
-        <div className='flex w-full'>Next Page</div>
       </div>
 
   );
