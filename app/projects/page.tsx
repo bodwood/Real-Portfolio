@@ -251,7 +251,7 @@ const Projects = () => {
               <div className='relative'>
                 <Image
                   className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/gear-up-landing-page.png'}
+                  src={'/images/mechanic-factory-landing-page.jpeg'}
                   alt='image'
                   fill
                   sizes='100vw'
@@ -263,7 +263,7 @@ const Projects = () => {
               <div className='relative'>
                 <Image
                   className='rounded-lg hover:blur-sm cursor-pointer'
-                  src={'/images/quoted-landing-page.png'}
+                  src={'/images/search-coach-landing-page.png'}
                   alt='image'
                   sizes='100vw'
                   fill
