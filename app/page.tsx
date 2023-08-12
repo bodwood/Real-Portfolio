@@ -1,11 +1,9 @@
 'use client';
 import Navbar from './components/navbar';
 import { useState, useEffect } from 'react';
-import { ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faHand, faHandPointLeft } from '@fortawesome/free-regular-svg-icons';
-import { faComputerMouse, faArrowDown, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faHand } from '@fortawesome/free-regular-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import './global.css';

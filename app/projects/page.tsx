@@ -11,7 +11,9 @@ const Projects = () => {
   const [featuredProjects, setFeaturedProjects] = useState(true);
   const [reactProjects, setReactProjects] = useState(false);
   const [cSharpProjects, setCSharpProjects] = useState(false);
-  const [qaProjects, setQAProjects] = useState(false);
+  const [mobileOptionsShow, setMobileOptionsShow] = useState(false);
+  const [optionName, setOptionName] = useState('Featured');
+
 
   useEffect(() => {
     setFadeIn(true);
@@ -34,37 +36,35 @@ const Projects = () => {
     };
   }, []);
 
+  const toggleDropDown = () => {
+    setMobileOptionsShow(!mobileOptionsShow);
+  }
+
   const showProjects = (project: string) => {
     switch (project) {
       case 'featured':
         setFeaturedProjects(true);
         setReactProjects(false);
         setCSharpProjects(false);
-        setQAProjects(false);
+        setOptionName('Featured');
         break;
       case 'react':
         setFeaturedProjects(false);
         setReactProjects(true);
         setCSharpProjects(false);
-        setQAProjects(false);
+        setOptionName('React');
         break;
       case 'csharp':
         setFeaturedProjects(false);
         setReactProjects(false);
         setCSharpProjects(true);
-        setQAProjects(false);
-        break;
-      case 'qa':
-        setFeaturedProjects(false);
-        setReactProjects(false);
-        setCSharpProjects(false);
-        setQAProjects(true);
+        setOptionName('C# .NET');
         break;
       default:
         setFeaturedProjects(true);
         setReactProjects(false);
         setCSharpProjects(false);
-        setQAProjects(false);
+        setOptionName('Featured');
         break;
     }
   };
@@ -82,19 +82,74 @@ const Projects = () => {
         <h1 className='text-3xl font-bold'>Projects</h1>
       </div>
 
-      <div className='sm:hidden'>
-        <label htmlFor='tabs' className='sr-only'>
-          Project Type
-        </label>
-        <select
-          id='tabs'
-          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+      <div className='md:hidden relative inline-block text-center dark:bg-gray-800 bg-white '>
+        <div>
+          <button
+            type='button'
+            className='inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 bg-white dark:bg-gray-800'
+            id='menu-button'
+            aria-expanded='true'
+            aria-haspopup='true'
+            onClick={() => toggleDropDown()}
+          >
+            {optionName}
+            <svg className='-mr-1 h-5 w-5 text-gray-400' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
+              <path
+                fill-rule='evenodd'
+                d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z'
+                clip-rule='evenodd'
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Options */}
+        <div
+          className={`md:hidden ${
+            mobileOptionsShow ? 'block' : 'hidden'
+          } relative right-0 z-10 mt-2 w-full origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5`}
+          role='menu'
+          aria-orientation='vertical'
+          aria-labelledby='menu-button'
         >
-          <option>Featured</option>
-          <option>React</option>
-          <option>C# .NET</option>
-        </select>
+          <div className='py-1 border rounded-2xl'>
+            <a
+              href='#'
+              className='dark:text-white text-gray-700 block px-4 py-2 text-sm'
+              role='menuitem'
+              id='menu-item-0'
+              onClick={() => {
+                showProjects('featured'), toggleDropDown();
+              }}
+            >
+              Featured
+            </a>
+            <a
+              href='#'
+              className='dark:text-white text-gray-700 block px-4 py-2 text-sm'
+              role='menuitem'
+              id='menu-item-1'
+              onClick={() => {
+                showProjects('react'), toggleDropDown();
+              }}
+            >
+              React
+            </a>
+            <a
+              href='#'
+              className='dark:text-white text-gray-700 block px-4 py-2 text-sm'
+              role='menuitem'
+              id='menu-item-2'
+              onClick={() => {
+                showProjects('csharp'), toggleDropDown();
+              }}
+            >
+              C#
+            </a>
+          </div>
+        </div>
       </div>
+
       <ul className='hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400 border cursor-pointer'>
         <li className='w-full' onClick={() => showProjects('featured')}>
           <a
